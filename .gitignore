@@ -1,0 +1,12 @@
+*.log
+.vs
+.idea
+.build
+.history
+jsconfig.json
+npm-debug.log*
+node_modules
+lib/
+dist
+public
+.DS_STORE

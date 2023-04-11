@@ -1,0 +1,69 @@
+@import './BrandCard.less';
+
+#home-page-widget {
+    font-size: 12px;
+
+    .promote-image {
+        width: 100%;
+        height: 360px;
+    }
+
+    .brand-cards-container {
+        width: 90%;
+        margin: 32px auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 360px);
+        justify-content: center;
+        grid-gap: 60px;
+    }
+
+    .footer {
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #232f3e;
+
+        .footer-content {
+            font-size: 12px;
+
+            > span {
+                color: #ffffff;
+            }
+
+            > a {
+                color: #666;
+            }
+        }
+    }
+
+    .qr-image {
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        bottom: 30px;
+        right: 30px;
+    }
+
+    .brand-card();
+
+    // @media (max-width: 1400px) {
+    //     .brand-cards-container {
+    //         width: 90%;
+    //         grid-template-columns: repeat(auto-fill, 3fr);
+    //         grid-gap: 60px;
+    //     }
+    // }
+
+    @media (max-width: 600px) {
+        .promote-image {
+            height: 16vh;
+        }
+
+        .brand-cards-container {
+            width: 70%;
+            grid-gap: 30px;
+            grid-template-columns: none;
+        }
+    }
+}

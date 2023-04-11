@@ -1,0 +1,88 @@
+#signup-widget {
+    height: calc(100vh - 40px);
+    width: 100%;
+    display: flex;
+
+    .branding-img-wrapper {
+        flex-grow: 2;
+        background-size: cover;
+        background-image: url('/images/background.jpg');
+    }
+
+    .signup-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 500px;
+        padding: 60px;
+        background: #ffffff;
+
+        .signup-header {
+            > span {
+                font-size: 14px;
+                color: #757575;
+            }
+
+            > div {
+                margin-top: 8px;
+                font-weight: 600;
+                font-size: 22px;
+            }
+        }
+
+        .ant-input {
+            height: 36px;
+        }
+
+        .ant-input-affix-wrapper {
+            height: 38px;
+            align-items: center;
+        }
+
+        .ant-form-item-label > label {
+            height: 36px;
+        }
+
+        .ant-btn-primary {
+            height: 36px;
+        }
+
+        .error-msg {
+            display: flex;
+            justify-content: center;
+            color: red;
+        }
+    }
+
+    @media (max-width: 1023px) {
+        height: calc(100vh - 61px);
+
+        .branding-img-wrapper {
+            display: none;
+        }
+
+        .signup-container {
+            padding: 32px 0;
+            min-width: unset;
+            justify-content: start;
+        }
+
+        .ant-form-item {
+            padding: 0 10vw;
+            margin: 0 0 12px;
+        }
+
+        .ant-form-item-label {
+            padding-bottom: 0;
+        }
+
+        .ant-col-offset-6 {
+            margin: 0;
+        }
+        
+        .ant-btn-primary {
+            margin-top: 16px;
+        }
+    }
+}

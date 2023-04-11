@@ -1,0 +1,37 @@
+.account-overview () {
+    .account-overview {
+        width: 100%;
+
+        .content {
+            background-color: #fff;
+            padding: 32px 32px 48px;
+            display: flex;
+            flex-direction: column;
+
+            > span {
+                margin: 2px 0;
+            }
+
+            .invite-code-wrapper {
+                display: flex;
+                margin-top: 12px;
+
+                .ant-typography {
+                    color: #8d8d8d;
+                }
+            }
+
+            .btn-wrapper {
+                margin-top: 48px;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .content {
+                padding: 18px 8px;
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@import './AccountOverview.less';
+@import './RebateDetails.less';
+@import './ReferFriend.less';
+@import './WithdrawDetails.less';
+@import './WithdrawApply.less';
+
+#user-center-widget {
+    height: 100%;
+
+    .ant-layout.ant-layout-has-sider {
+        height: 100%;
+        overflow: hidden;
+
+        .ant-menu-item {
+            margin: 10px 0;
+        }
+    }
+
+    .ant-layout {
+        overflow: auto;
+    }
+
+    .card {
+        margin-bottom: 24px;
+
+        .header {
+            height: 36;
+            padding: 4px 8px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            background-color: #232f3e;
+        }
+    }
+
+    .account-overview();
+    .rebate-details();
+    .refer-friend();
+    .withdraw-details();
+    .withdraw-apply();
+
+    @media (max-width: 1023px) {
+        padding-bottom: 32px;
+
+        .ant-layout-sider {
+            display: none;
+        }
+
+        .ant-layout {
+            padding: 0 !important;
+        }
+    }
+}
