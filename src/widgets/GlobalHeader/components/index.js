@@ -2,16 +2,13 @@
 import React, { useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { Button, Dropdown, Menu, Drawer } from 'antd';
-import { UserOutlined, DownOutlined, MenuOutlined } from '@ant-design/icons';
+import { UserOutlined, DownOutlined } from '@ant-design/icons';
 
 import { useStore } from '../context';
-import { globalHeaderLabels } from '../../common/constant';
-
-const { LOGIN, SIGNUP, USER_CENTER, HELP_CENTER, LOGOUT } = globalHeaderLabels;
 
 const GlobalHeader = () => {
     const store = useStore();
-    const { phone, scope } = store;
+    const { isLogin } = store;
 
     const [visible, setVisible] = useState(false);
 
@@ -23,129 +20,135 @@ const GlobalHeader = () => {
     const accountMenu = (
         <Menu onClick={handleUserMenuClick}>
             <Menu.Item key="logout" danger>
-                {LOGOUT}
+                {'退出登录'}
             </Menu.Item>
         </Menu>
     );
-
-    const onLoginIconClick = () => {
-        window.location.href = `${window.location.origin}/account/login`;
-    };
-
-    const onMenuIconClick = () => {
-        setVisible(true);
-    };
 
     const onClose = () => {
         setVisible(false);
     };
 
     const onDrawerItemClick = (key) => {
-        if (key === 'logout' || key === 'help-center') {
+        if (key === 'logout') {
             window.location.href = `${window.location.origin}/${key}`;
         } else {
             window.location.href = `${window.location.origin}/user-center/${key}`;
         }
     };
 
-    return (
-        <div id="global-header-widget">
-            <div className="header-logo">
-                <a
-                    href={scope !== 'admin' ? '/' : 'javascript:void(0);'}
-                    style={{ cursor: scope !== 'admin' ? 'pointer' : 'default' }}
-                >
-                    <img className="icon" alt="" src="/images/blink_logo.png" />
-                </a>
-            </div>
-            <div className="header-nav">
-                {phone ? (
-                    <div>
-                        <UserOutlined />
-                        <Dropdown
-                            trigger="click"
-                            placement="bottom"
-                            overlayClassName="login-out-overlay"
-                            overlay={accountMenu}
-                            dropdownAlign={{
-                                bottom: {
-                                    points: ['tl', 'tr'],
-                                    offset: [10, 20]
-                                }
-                            }}
-                        >
-                            <span>
-                                {phone}
-                                <DownOutlined style={{ marginLeft: 4 }} />
-                            </span>
-                        </Dropdown>
-                        {scope !== 'admin' && (
-                            <Button type="link" href="/user-center/account-overview">
-                                {USER_CENTER}
-                            </Button>
-                        )}
-                    </div>
-                ) : (
-                    <div>
-                        <Button style={{ color: '#FE8C00' }} type="link" href="/account/login">
-                            {LOGIN}
-                        </Button>
-                        <Button type="link" href="/account/signup">
-                            {SIGNUP}
-                        </Button>
-                    </div>
-                )}
-                {scope !== 'admin' && (
-                    <>
-                        <div className="spliter" />
-                        <Button type="link" href="/help-center">
-                            {HELP_CENTER}
-                        </Button>
-                    </>
-                )}
-            </div>
-            {phone ? (
-                <div aria-hidden="true" className="mobile-Menu-icon" onClick={onMenuIconClick}>
-                    <MenuOutlined />
+    const menuItems = [
+        {
+            label: (
+                <div>
+                    {'商家分类'}
+                    <DownOutlined style={{ marginLeft: 4, fontSize: 10 }} />
                 </div>
-            ) : (
-                <div aria-hidden="true" className="mobile-login-icon" onClick={onLoginIconClick}>
-                    <UserOutlined />
+            ),
+            key: 'stores',
+            children: [
+                { label: 'store1', key: 'store1' },
+                { label: 'store2', key: 'store2' },
+                { label: 'store3', key: 'store3' }
+            ]
+        },
+        {
+            label: (
+                <div>
+                    {'单品/优惠'}
+                    <DownOutlined style={{ marginLeft: 4, fontSize: 10 }} />
                 </div>
-            )}
+            ),
+            key: 'best',
+            children: [
+                { label: '热门单品', key: 'bestSeller' },
+                { label: '热门优惠', key: 'bestDiscount' }
+            ]
+        },
+        {
+            label: '海淘攻略',
+            key: 'note'
+        },
+        {
+            label: '转运大全',
+            key: 'trans'
+        },
+        {
+            label: '关于海淘派',
+            key: 'about'
+        }
+    ];
 
-            <Drawer
-                closable={false}
-                width="40vw"
-                placement="right"
-                onClose={onClose}
-                visible={visible}
-                contentWrapperStyle={{ marginTop: 61 }}
-                bodyStyle={{ padding: 0 }}
-            >
-                <div aria-hidden="true" className="drawer-menu-item" onClick={() => onDrawerItemClick('account-overview')}>
-                    账户概览
+    return (
+        <header id="global-header-widget">
+            <section className="header-content">
+                <div className="header-logo">
+                    <a href="/" style={{ cursor: 'pointer' }}>
+                        <img className="icon" alt="" src="//static.rebatesme.cn/assets-1.5.52/images/pc/logo.svg" />
+                    </a>
                 </div>
-                <div aria-hidden="true" className="drawer-menu-item" onClick={() => onDrawerItemClick('withdraw-details')}>
-                    提现明细
+                <div className="header-nav">
+                    {isLogin ? (
+                        <div>
+                            <UserOutlined />
+                            <Dropdown
+                                trigger="click"
+                                placement="bottom"
+                                overlayClassName="login-out-overlay"
+                                overlay={accountMenu}
+                                dropdownAlign={{
+                                    bottom: {
+                                        points: ['tl', 'tr'],
+                                        offset: [10, 20]
+                                    }
+                                }}
+                            >
+                                <span>
+                                    {'我的账户'}
+                                    <DownOutlined style={{ marginLeft: 4 }} />
+                                </span>
+                            </Dropdown>
+                        </div>
+                    ) : (
+                        <div>
+                            <Button style={{ color: '#fa8c16' }} type="link" href="/account/login">
+                                {'登录'}
+                            </Button>
+                            <Button
+                                style={{
+                                    background: '#fa8c16',
+                                    color: '#ffffff',
+                                    width: '120px',
+                                    borderRadius: '16px'
+                                }}
+                                type="link"
+                                href="/account/signup"
+                            >
+                                {'立即加入'}
+                            </Button>
+                        </div>
+                    )}
                 </div>
-                <div aria-hidden="true" className="drawer-menu-item" onClick={() => onDrawerItemClick('rebate-details')}>
-                    返利明细
-                </div>
-                <div aria-hidden="true" className="drawer-menu-item" onClick={() => onDrawerItemClick('apply-withdraw')}>
-                    申请提现
-                </div>
-                <div aria-hidden="true" className="drawer-menu-item" onClick={() => onDrawerItemClick('refer-friend')}>
-                    好友推荐计划
-                </div>
-                <div aria-hidden="true" className="drawer-menu-item" onClick={() => onDrawerItemClick('help-center')}>
-                    帮助中心
-                </div>
-                <div aria-hidden="true" className="drawer-menu-item" style={{ color: 'red' }} onClick={() => onDrawerItemClick('logout')}>
-                    退出登录
-                </div>
-            </Drawer>
-        </div>
+                <Drawer
+                    closable={false}
+                    width="40vw"
+                    placement="right"
+                    onClose={onClose}
+                    visible={visible}
+                    contentWrapperStyle={{ marginTop: 61 }}
+                    bodyStyle={{ padding: 0 }}
+                >
+                    <div aria-hidden="true" className="drawer-menu-item" onClick={() => onDrawerItemClick('logout')}>
+                        退出登录
+                    </div>
+                </Drawer>
+            </section>
+            <section className="sub-nav">
+                <nav className="sub-nav-content">
+                    <Menu items={menuItems} mode="horizontal" triggerSubMenuAction="hover" />
+                </nav>
+            </section>
+        </header>
     );
 };
 

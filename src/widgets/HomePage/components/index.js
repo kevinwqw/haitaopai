@@ -14,13 +14,44 @@ const HomePage = () => {
         <div id="home-page-widget">
             <Carousel autoplay effect="fade">
                 <div className="promote-image">
-                    <img width="100%" height="100%" alt="" src="/images/promote_1.jpg" />
+                    <img
+                        width="100%"
+                        height="100%"
+                        alt=""
+                        src="https://cdn.55haitao.com/bbs/data/attachment/banner/2023/04/12/5d760bba7db4437bf19d4fce8946e437.jpg"
+                    />
                 </div>
                 <div className="promote-image">
-                    <img width="100%" height="100%" alt="" src="/images/promote_2.jpg" />
+                    <img
+                        width="100%"
+                        height="100%"
+                        alt=""
+                        src="https://cdn.55haitao.com/bbs/data/attachment/banner/2023/04/11/216e2bdf8aad690e1fb17ab227aa8567.jpg"
+                    />
                 </div>
                 <div className="promote-image">
-                    <img width="100%" height="100%" alt="" src="/images/promote_3.jpg" />
+                    <img
+                        width="100%"
+                        height="100%"
+                        alt=""
+                        src="https://cdn.55haitao.com/bbs/data/attachment/banner/2023/03/31/2c329ae9ab2189dc9ff6403c1f42e3ac.jpg"
+                    />
+                </div>
+                <div className="promote-image">
+                    <img
+                        width="100%"
+                        height="100%"
+                        alt=""
+                        src="https://cdn.55haitao.com/bbs/data/attachment/banner/2023/04/03/02063992529c84cfeb9e199ec4daedfa.jpg"
+                    />
+                </div>
+                <div className="promote-image">
+                    <img
+                        width="100%"
+                        height="100%"
+                        alt=""
+                        src="https://cdn.55haitao.com/bbs/data/attachment/banner/2023/04/10/52969cc671e9e73215d3422917fcacdc.jpg"
+                    />
                 </div>
             </Carousel>
             <div className="brand-cards-container">
@@ -29,28 +60,19 @@ const HomePage = () => {
                 ) : (
                     <>
                         {brandList.map((item) => (
-                                <div className="card-wrapper">
-                                    <BrandCard
-                                        isLogin={isLogin}
-                                        key={item.brandId}
-                                        brandId={item.brandId}
-                                        brandName={item.brandName}
-                                        rebateRate={item.rebateRate}
-                                    />
-                                </div>
+                            <div className="card-wrapper">
+                                <BrandCard
+                                    isLogin={isLogin}
+                                    key={item.brandId}
+                                    brandId={item.brandId}
+                                    brandName={item.brandName}
+                                    rebateRate={item.rebateRate}
+                                />
+                            </div>
                         ))}
                     </>
                 )}
             </div>
-            <div className="footer">
-                <div className="footer-content">
-                    <span>ICP备案号：</span>
-                    <a href="https://beian.miit.gov.cn/" target="_blank">
-                        冀ICP备2022016182号-1
-                    </a>
-                </div>
-            </div>
-            <img className="qr-image" alt="" src="images/wechat.jpg" />
         </div>
     );
 };

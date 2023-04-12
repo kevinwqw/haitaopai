@@ -31,8 +31,7 @@ const createHandler = (addWidgets) => async (request, h) => {
     const { assetManager, renderer } = createManagers(request, h);
     const userInfo = getUseInfo(request);
     const phone = userInfo ? userInfo.phone : null;
-    const scope = userInfo ? userInfo.scope : null;
-    renderer.addHeaderWidget(widgets.GlobalHeader, { phone, scope });
+    renderer.addHeaderWidget(widgets.GlobalHeader, { phone });
     if (addWidgets) {
         await addWidgets(renderer, assetManager, request);
     }

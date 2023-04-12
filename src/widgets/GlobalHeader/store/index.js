@@ -1,8 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 
 class Store {
-    phone = null;
-    scope = null;
+    isLogin = null;
 
     constructor() {
         makeAutoObservable(this, {}, { autoBind: true });
@@ -13,9 +12,8 @@ class Store {
     }
 
     async init(params) {
-        const { phone, scope } = params;
-        this.phone = phone;
-        this.scope = scope;
+        const { phone } = params;
+        this.isLogin = !!phone;
     }
 }
 

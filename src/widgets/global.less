@@ -61,16 +61,10 @@ li {
 
 #pjax-container {
     height: 100%;
+    width: 100%;
+    padding-top: 126px;
     overflow: auto;
-
-    > .main-container {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        flex-direction: row;
-        overflow-y: auto;
-        // .bodyWidthDisplay();
-    }
+    overflow-y: auto;
 }
 
 .main-nav {
@@ -99,8 +93,6 @@ li {
     overflow-y: hidden;
     overflow-x: hidden;
     margin: 0;
-    // width: 1280px;
-    // margin: 0 auto;
 
     > div {
         height: 100%;
@@ -163,4 +155,25 @@ li {
 .ant-dropdown-menu {
     width: max-content;
     margin: 0 auto !important;
+}
+
+.ant-dropdown-trigger {
+    cursor: pointer;
+    padding: 0 15px 0 8px;
+
+    &:hover {
+        color: #fa8c16;
+    }
+}
+
+.ant-menu-horizontal {
+    border-bottom: none !important;
+
+    > li:nth-child(1) {
+        padding-left: 0 !important;
+    }
+}
+
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover::after {
+    border-bottom: 0 !important;
 }

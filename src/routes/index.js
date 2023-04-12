@@ -1,8 +1,5 @@
 const { createHandler, notFoundHandler, errorHandler, renderErrorPage, renderNotFoundPage } = require('./common/utils');
 const widgets = require('../widgets').default;
-const config = require('../server/config');
-
-const userAuth = { strategy: 'session', mode: 'required', scope: ['user'] };
 
 module.exports = function (server) {
     const { app } = server;
@@ -15,10 +12,48 @@ module.exports = function (server) {
         method: 'GET',
         path: '/',
         options: {
-            handler: createHandler((renderer, assetManager, request) => {
-                const { auth } = request;
-                const phone = auth.artifacts?.phone;
-                renderer.addMainContentWidget(widgets.HomePage, { phone });
+            handler: createHandler((renderer) => {
+                renderer.addMainContentWidget(widgets.HomePage);
+            })
+        }
+    });
+
+    server.route({
+        method: 'GET',
+        path: '/stores',
+        options: {
+            handler: createHandler((renderer) => {
+                renderer.addMainContentWidget(widgets.StorePage);
+            })
+        }
+    });
+
+    server.route({
+        method: 'GET',
+        path: '/best-discount',
+        options: {
+            handler: createHandler((renderer) => {
+                renderer.addMainContentWidget(widgets.BestDiscountPage);
+            })
+        }
+    });
+
+    server.route({
+        method: 'GET',
+        path: '/best-seller',
+        options: {
+            handler: createHandler((renderer) => {
+                renderer.addMainContentWidget(widgets.BestSellerPage);
+            })
+        }
+    });
+
+    server.route({
+        method: 'GET',
+        path: '/about',
+        options: {
+            handler: createHandler((renderer) => {
+                renderer.addMainContentWidget(widgets.About);
             })
         }
     });
@@ -49,47 +84,6 @@ module.exports = function (server) {
         options: {
             handler: createHandler((renderer) => {
                 renderer.addMainContentWidget(widgets.PasswordResetSimple, { widgetName: 'passwordReset' });
-            })
-        }
-    });
-
-    server.route({
-        method: 'GET',
-        path: '/store/{brandId}',
-        options: {
-            handler: createHandler((renderer, assetManager, request) => {
-                const { auth } = request;
-                const phone = auth.artifacts?.phone;
-                const { brandId } = request.params;
-                renderer.addMainContentWidget(widgets.BrandCenter, { brandId, phone });
-            })
-        }
-    });
-
-    server.route({
-        method: 'GET',
-        path: '/help-center',
-        options: {
-            handler: createHandler((renderer) => {
-                renderer.addMainContentWidget(widgets.HelpCenter, { widgetName: 'helpCenter' });
-            })
-        }
-    });
-
-    server.route({
-        method: 'GET',
-        path: '/user-center/{activeTabName}',
-        options: {
-            auth: userAuth,
-            handler: createHandler((renderer, assetManager, request) => {
-                const { activeTabName } = request.params;
-                const { auth } = request;
-                const inviteCode = auth.artifacts?.inviteCode;
-                renderer.addSinglePageContentWidget(widgets.UserCenter, {
-                    activeTabName,
-                    inviteCode,
-                    exchangeRate: config.exchangeRate
-                });
             })
         }
     });
