@@ -1,19 +1,19 @@
-@screen-min: 1280px;
-@screen-max: 1920px;
-@page-padding: 0 32px;
-@page-margin: 0 auto;
-
 * {
     box-sizing: border-box;
 }
 
 html {
+    margin: 0;
+    padding: 0;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    height: 100%;
+    overflow-x: auto;
+    overflow-y: scroll;
 }
 
 body {
+    margin: 0;
+    padding: 0;
     margin: 0;
     font-family: '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'Helvetica Neue', 'MIcrosoft YaHei', sans-serif !important;
     height: 100%;
@@ -45,12 +45,6 @@ li {
     margin: 0;
     padding: 0;
 }
-
-// .bodyWidthDisplay() {
-//     @media screen and (max-width: @screen-min) {
-//         min-width: @screen-min !important;
-//     }
-// }
 
 .main-body {
     display: flex;

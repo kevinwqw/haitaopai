@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { Button, Dropdown, Menu, Drawer } from 'antd';
 import { UserOutlined, DownOutlined } from '@ant-design/icons';
+import ExpandableMenu from './ExpandableMenu';
 
 import { useStore } from '../context';
 
@@ -47,9 +48,13 @@ const GlobalHeader = () => {
             ),
             key: 'stores',
             children: [
-                { label: 'store1', key: 'store1' },
-                { label: 'store2', key: 'store2' },
-                { label: 'store3', key: 'store3' }
+                { label: '综合商家', key: 'store1' },
+                { label: '美妆个护', key: 'store2' },
+                { label: '服饰包袋', key: 'store3' },
+                { label: '球鞋潮鞋', key: 'store4' },
+                { label: '母婴儿童', key: 'store5' },
+                { label: '食品保健', key: 'store6' },
+                { label: '户外运动', key: 'store7' }
             ]
         },
         {
@@ -145,7 +150,7 @@ const GlobalHeader = () => {
             </section>
             <section className="sub-nav">
                 <nav className="sub-nav-content">
-                    <Menu items={menuItems} mode="horizontal" triggerSubMenuAction="hover" />
+                    <ExpandableMenu items={menuItems} />
                 </nav>
             </section>
         </header>
