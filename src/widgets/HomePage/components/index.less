@@ -1,48 +1,31 @@
 @import './BrandCard.less';
 
 #home-page-widget {
-    font-size: 12px;
+    width: 100%;
+    margin: 0 auto;
 
     .promote-image {
         width: 100%;
         height: 280px;
     }
 
-    .brand-cards-container {
+    .content-container {
+        margin: 0 auto;
         width: 90%;
-        margin: 32px auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 360px);
-        justify-content: center;
-        grid-gap: 60px;
-    }
+        min-width: 1200px;
 
-    .footer {
-        height: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #232f3e;
-
-        .footer-content {
-            font-size: 12px;
-
-            > span {
-                color: #ffffff;
-            }
-
-            > a {
-                color: #666;
-            }
+        h1 {
+            padding: 12px 0;
         }
     }
 
-    .qr-image {
-        position: absolute;
-        height: 100px;
-        width: 100px;
-        bottom: 30px;
-        right: 30px;
+    .cards-container {
+        width: 90%;
+        margin: 12px auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 220px);
+        justify-content: center;
+        grid-gap: 40px;
     }
 
     .brand-card();

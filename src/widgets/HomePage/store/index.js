@@ -1,10 +1,351 @@
 import { makeAutoObservable } from 'mobx';
-import BffSdk from '../../sdk';
 
 class Store {
-    isloading = false;
     isLogin = false;
-    brandList = [];
+    storeList = [
+        {
+            key: 'kiehls-1',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-2',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-3',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-4',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-5',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-6',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-7',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-8',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-9',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-10',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-11',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-12',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        }
+    ];
+    bestDiscountList = [
+        {
+            key: 'kiehls-1',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-2',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-3',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-4',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-5',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-6',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-7',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-8',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-9',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-10',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-11',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-12',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        }
+    ];
+    bestSellerlist = [
+        {
+            key: 'kiehls-1',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-2',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-3',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-4',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-5',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-6',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-7',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-8',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-9',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-10',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-11',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-12',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        }
+    ];
+    transportList = [
+        {
+            key: 'kiehls-1',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-2',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-3',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-4',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-5',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-6',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-7',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-8',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-9',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-10',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-11',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        },
+        {
+            key: 'kiehls-12',
+            name: 'kiehls',
+            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
+            link: '',
+            rebateRate: 16
+        }
+    ];
 
     constructor() {
         makeAutoObservable(this, {}, { autoBind: true });
@@ -17,17 +358,6 @@ class Store {
     async init(params) {
         const { phone } = params;
         this.isLogin = !!phone;
-        this.getBrandList();
-    }
-
-    * getBrandList() {
-        this.isLoading = true;
-        const sdk = new BffSdk();
-        const res = yield sdk.getBrandList();
-        if (res.success) {
-            this.brandList = res.data;
-        }
-        this.isLoading = false;
     }
 }
 
