@@ -1,6 +1,6 @@
 const EnvUtil = require('./env-util');
 
-const DEFAULT_PORT = 8080;
+const DEFAULT_PORT = 8028;
 
 let configInstance = null;
 
@@ -11,7 +11,7 @@ const getConfig = (skipCache = false) => {
     configInstance = {
         featureName: '',
         server: {
-            host: EnvUtil.readEnvValue('HOST', '::'),
+            host: 8028,
             port: EnvUtil.readIntegerEnvValue('PORT', DEFAULT_PORT),
             debug: EnvUtil.readBoolEnvValue('DEBUG', false)
         },
