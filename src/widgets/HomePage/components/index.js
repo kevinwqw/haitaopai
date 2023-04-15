@@ -29,7 +29,10 @@ const HomePage = () => {
             </Carousel>
             <div className="content-container">
                 <section>
-                    <h1>热门商家</h1>
+                    <div className="section-title">
+                        <h1>热门商家</h1>
+                        <a href="/stores">{'查看全部>'}</a>
+                    </div>
                     <div className="cards-container">
                         {storeList.map((item) => (
                             <div className="card-wrapper">
@@ -45,7 +48,10 @@ const HomePage = () => {
                     </div>
                 </section>
                 <section>
-                    <h1>热门特惠</h1>
+                    <div className="section-title">
+                        <h1>热门特惠</h1>
+                        <a href="/best-discount">{'查看全部>'}</a>
+                    </div>
                     <div className="cards-container">
                         {bestDiscountList.map((item) => (
                             <div className="card-wrapper">
@@ -61,7 +67,10 @@ const HomePage = () => {
                     </div>
                 </section>
                 <section>
-                    <h1>热门单品</h1>
+                    <div className="section-title">
+                        <h1>热门单品</h1>
+                        <a href="best-seller">{'查看全部>'}</a>
+                    </div>
                     <div className="cards-container">
                         {bestSellerlist.map((item) => (
                             <div className="card-wrapper">
@@ -77,7 +86,10 @@ const HomePage = () => {
                     </div>
                 </section>
                 <section>
-                    <h1>海淘转运</h1>
+                    <div className="section-title">
+                        <h1>海淘转运</h1>
+                        <a href="/transportation">{'查看全部>'}</a>
+                    </div>
                     <div className="cards-container">
                         {transportList.map((item) => (
                             <div className="card-wrapper">
