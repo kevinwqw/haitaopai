@@ -16,7 +16,7 @@ const SetHeaders = require('./plugins/set-headers');
 const { registerService } = require('./register-services');
 
 const prodConfig = require('./prod-config');
-// const getConfig = require('../common/config');
+const getConfig = require('../common/config');
 
 const initConfig = () => {
     const register = require('@babel/register');
