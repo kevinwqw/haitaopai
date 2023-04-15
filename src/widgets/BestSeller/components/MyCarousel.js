@@ -21,7 +21,7 @@ export const MyCarousel = (props) => {
 
     return (
         <div className="carousel">
-            <h3>单品排行</h3>
+            <h3>特惠排行</h3>
             <div className="action-bar">
                 <img onClick={onPreClick} src="/images/angle-left.svg"></img>
                 <span>{`${activeTabIndex}/3`}</span>

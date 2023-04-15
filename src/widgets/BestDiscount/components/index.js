@@ -7,11 +7,11 @@ import { useStore } from '../context';
 
 const BestDiscount = () => {
     const store = useStore();
-    const { bestDiscountList } = store;
+    const { bestDiscountList, carouselItems } = store;
 
     return (
         <div id="best-discount-widget">
-            <section>
+            <section className="content-section">
                 <h1>热门特惠</h1>
                 <div className="cards-container">
                     {bestDiscountList.map((item) => (
@@ -27,7 +27,9 @@ const BestDiscount = () => {
                     ))}
                 </div>
             </section>
-            <MyCarousel />
+            <div className="rank-list">
+                <MyCarousel items={carouselItems} />
+            </div>
         </div>
     );
 };

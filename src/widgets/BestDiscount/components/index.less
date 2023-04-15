@@ -4,24 +4,32 @@
 #best-discount-widget {
     margin: 0 auto;
     padding: 30px 100px;
+    display: flex;
 
-    .content-container {
-        margin: 0 auto;
-        width: 90%;
-        min-width: 1200px;
+    .content-section {
+        flex-grow: 1;
+        .content-container {
+            margin: 0 auto;
+            width: 90%;
+            min-width: 1200px;
 
-        h1 {
-            padding: 12px 0;
+            h1 {
+                padding: 12px 0;
+            }
+        }
+
+        .cards-container {
+            margin: 12px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 220px);
+            justify-content: center;
+            grid-gap: 10px;
         }
     }
 
-    .cards-container {
-        width: 90%;
-        margin: 12px auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 220px);
-        justify-content: center;
-        grid-gap: 40px;
+    .rank-list {
+        width: 320px;
+        position: relative;
     }
 
     .brand-card();
