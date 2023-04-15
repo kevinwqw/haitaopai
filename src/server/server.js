@@ -15,16 +15,16 @@ const ErrorPages = require('./plugins/error-pages');
 const SetHeaders = require('./plugins/set-headers');
 const { registerService } = require('./register-services');
 
-// const prodConfig = require('./prod-config');
-const getConfig = require('../common/config');
+const prodConfig = require('./prod-config');
+// const getConfig = require('../common/config');
 
 const initConfig = () => {
     const register = require('@babel/register');
     register({ only: [/server/, /widgets/, /common/] });
     global.__SERVER_RENDERING__ = true;
-    // Object.entries(prodConfig).forEach(([key, value]) => {
-    //     process.env[key] = value;
-    // });
+    Object.entries(prodConfig).forEach(([key, value]) => {
+        process.env[key] = value;
+    });
 };
 
 initConfig();
