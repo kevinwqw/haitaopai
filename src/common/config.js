@@ -1,7 +1,5 @@
 const EnvUtil = require('./env-util');
 
-const DEFAULT_PORT = 8028;
-
 let configInstance = null;
 
 const getConfig = (skipCache = false) => {
@@ -11,8 +9,8 @@ const getConfig = (skipCache = false) => {
     configInstance = {
         featureName: '',
         server: {
-            host: 8028,
-            port: EnvUtil.readIntegerEnvValue('PORT', DEFAULT_PORT),
+            host: EnvUtil.readEnvValue('HOST', '::'),
+            port: 8028,
             debug: EnvUtil.readBoolEnvValue('DEBUG', false)
         },
         widgetMapping: {},
