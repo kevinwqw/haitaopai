@@ -1,7 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 
 class Store {
-    isLogin = false;
     storeList = [
         {
             key: 'kiehls-1',
@@ -356,8 +355,7 @@ class Store {
     }
 
     async init(params) {
-        const { phone } = params;
-        this.isLogin = !!phone;
+
     }
 }
 

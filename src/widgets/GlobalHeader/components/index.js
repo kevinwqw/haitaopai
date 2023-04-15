@@ -48,7 +48,7 @@ const GlobalHeader = () => {
             ),
             key: 'stores',
             children: [
-                { label: '综合商家', key: 'store1' },
+                { label: '综合商家', key: 'store1', },
                 { label: '美妆个护', key: 'store2' },
                 { label: '服饰包袋', key: 'store3' },
                 { label: '球鞋潮鞋', key: 'store4' },
@@ -66,21 +66,24 @@ const GlobalHeader = () => {
             ),
             key: 'best',
             children: [
-                { label: '热门单品', key: 'bestSeller' },
-                { label: '热门优惠', key: 'bestDiscount' }
+                { label: '热门单品', key: 'bestSeller', href: 'best-seller' },
+                { label: '热门优惠', key: 'bestDiscount', href: 'best-discount' }
             ]
         },
         {
             label: '海淘攻略',
-            key: 'note'
+            key: 'note',
+            href: 'notes'
         },
         {
             label: '转运大全',
-            key: 'trans'
+            key: 'trans',
+            href: 'transportation'
         },
         {
             label: '关于海淘派',
-            key: 'about'
+            key: 'about',
+            href: 'about'
         }
     ];
 
@@ -116,16 +119,11 @@ const GlobalHeader = () => {
                         </div>
                     ) : (
                         <div>
-                            <Button style={{ color: '#fa8c16' }} type="link" href="/account/login">
+                            <Button className="login-btn" type="link" href="/account/login">
                                 {'登录'}
                             </Button>
                             <Button
-                                style={{
-                                    background: '#fa8c16',
-                                    color: '#ffffff',
-                                    width: '120px',
-                                    borderRadius: '16px'
-                                }}
+                                className="signup-btn"
                                 type="link"
                                 href="/account/signup"
                             >

@@ -10,13 +10,15 @@ const ExpandableMenu = (props) => {
                     items.map((item, index) => {
                         return (
                             <li>
-                                <span>{item.label}</span>
+                                <a href={item.href ? item.href : 'javascript:void(0);'}>{item.label}</a>
                                 {item.children && (
                                     <ul className={index === 0 ? 'sub-level-menu customized' : 'sub-level-menu'}>
                                         {item.children.map((child) => {
                                             return (
                                                 <li>
-                                                    <span>{child.label}</span>
+                                                    <a href={child.href ? child.href : 'javascript:void(0);'}>
+                                                        {child.label}
+                                                    </a>
                                                 </li>
                                             );
                                         })}

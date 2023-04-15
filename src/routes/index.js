@@ -33,7 +33,7 @@ module.exports = function (server) {
         path: '/best-discount',
         options: {
             handler: createHandler((renderer) => {
-                renderer.addMainContentWidget(widgets.BestDiscountPage);
+                renderer.addMainContentWidget(widgets.BestDiscount);
             })
         }
     });
@@ -43,7 +43,27 @@ module.exports = function (server) {
         path: '/best-seller',
         options: {
             handler: createHandler((renderer) => {
-                renderer.addMainContentWidget(widgets.BestSellerPage);
+                renderer.addMainContentWidget(widgets.BestSeller);
+            })
+        }
+    });
+
+    server.route({
+        method: 'GET',
+        path: '/notes',
+        options: {
+            handler: createHandler((renderer) => {
+                renderer.addMainContentWidget(widgets.Notes);
+            })
+        }
+    });
+
+    server.route({
+        method: 'GET',
+        path: '/transportation',
+        options: {
+            handler: createHandler((renderer) => {
+                renderer.addMainContentWidget(widgets.Transportation);
             })
         }
     });
