@@ -1,0 +1,42 @@
+.trans-brand-card() {
+    .trans-brand-card {
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        background: #ffffff;
+        box-shadow: 1px 1px 10px 4px rgba(0, 0, 0, 0.1);
+        transition-property: box-shadow;
+        transition-duration: 0.5s, 0.25s;
+        transition-timing-function: ease;
+
+        .brand-content {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .content-title {
+                font-size: 16px;
+                font-weight: 600;
+                margin: 12px 0;
+            }
+
+            .content-body {
+                color: #fa8c16;
+                text-align: center;
+            }
+        }
+
+        img {
+            height: 160px;
+            width: 260px;
+        }
+
+        &:hover {
+            box-shadow: 1px 1px 10px 4px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            color: #fa8c16;
+        }
+    }
+}

@@ -23,7 +23,7 @@ module.exports = function (server) {
         path: '/stores',
         options: {
             handler: createHandler((renderer) => {
-                renderer.addMainContentWidget(widgets.StorePage);
+                renderer.addMainContentWidget(widgets.Stores);
             })
         }
     });

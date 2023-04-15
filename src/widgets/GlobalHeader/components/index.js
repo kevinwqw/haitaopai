@@ -48,13 +48,108 @@ const GlobalHeader = () => {
             ),
             key: 'stores',
             children: [
-                { label: '综合商家', key: 'store1', },
-                { label: '美妆个护', key: 'store2' },
-                { label: '服饰包袋', key: 'store3' },
-                { label: '球鞋潮鞋', key: 'store4' },
-                { label: '母婴儿童', key: 'store5' },
-                { label: '食品保健', key: 'store6' },
-                { label: '户外运动', key: 'store7' }
+                {
+                    label: '综合商家',
+                    key: 'store1',
+                    subMenuListItems: [
+                        {
+                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
+                        },
+                        {
+                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220812185036.png'
+                        },
+                        {
+                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20210918153612.jpg'
+                        },
+                        {
+                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220511115236.jpg'
+                        },
+                        {
+                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
+                        },
+                        {
+                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20230220093823.png'
+                        }
+                    ]
+                },
+                {
+                    label: '美妆个护',
+                    key: 'store2',
+                    subMenuListItems: [
+                        {
+                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220511115236.jpg'
+                        },
+                        {
+                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
+                        },
+                        {
+                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20230220093823.png'
+                        },
+                        {
+                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20230414095333.png'
+                        }
+                    ]
+                },
+                {
+                    label: '服饰包袋',
+                    key: 'store3',
+                    subMenuListItems: [
+                        {
+                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20210910180218.png'
+                        }
+                    ]
+                },
+                {
+                    label: '球鞋潮鞋',
+                    key: 'store4',
+                    subMenuListItems: [
+                        {
+                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
+                        },
+                        {
+                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220511115236.jpg'
+                        },
+                        {
+                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
+                        },
+                        {
+                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20230220093823.png'
+                        }
+                    ]
+                },
+                {
+                    label: '母婴儿童',
+                    key: 'store5',
+                    subMenuListItems: [
+                        {
+                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20230220093823.png'
+                        }
+                    ]
+                },
+                {
+                    label: '食品保健',
+                    key: 'store6',
+                    subMenuListItems: [
+                        {
+                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220511115236.jpg'
+                        },
+                        {
+                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
+                        },
+                        {
+                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20230220093823.png'
+                        }
+                    ]
+                },
+                {
+                    label: '户外运动',
+                    key: 'store7',
+                    subMenuListItems: [
+                        {
+                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -66,8 +161,26 @@ const GlobalHeader = () => {
             ),
             key: 'best',
             children: [
-                { label: '热门单品', key: 'bestSeller', href: 'best-seller' },
-                { label: '热门优惠', key: 'bestDiscount', href: 'best-discount' }
+                {
+                    label: '热门单品',
+                    key: 'bestSeller',
+                    href: 'best-seller',
+                    subMenuListItems: [
+                        {
+                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
+                        }
+                    ]
+                },
+                {
+                    label: '热门优惠',
+                    key: 'bestDiscount',
+                    href: 'best-discount',
+                    subMenuListItems: [
+                        {
+                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -122,11 +235,7 @@ const GlobalHeader = () => {
                             <Button className="login-btn" type="link" href="/account/login">
                                 {'登录'}
                             </Button>
-                            <Button
-                                className="signup-btn"
-                                type="link"
-                                href="/account/signup"
-                            >
+                            <Button className="signup-btn" type="link" href="/account/signup">
                                 {'立即加入'}
                             </Button>
                         </div>

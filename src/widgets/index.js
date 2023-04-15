@@ -9,6 +9,7 @@ import BestDiscount from './BestDiscount';
 import BestSeller from './BestSeller';
 import Transportation from './Transportation';
 import Notes from './Notes';
+import Stores from './Stores';
 
 export default {
     GlobalHeader,
@@ -21,5 +22,6 @@ export default {
     BestDiscount,
     BestSeller,
     Transportation,
-    Notes
+    Notes,
+    Stores
 };

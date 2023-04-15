@@ -1,17 +1,16 @@
 import React from 'react';
 import { observer } from 'mobx-react-lite';
-import BrandCard from './BrandCard';
+import BrandCard from '../../HomePage/components/BrandCard';
 
 import { useStore } from '../context';
 
-const Transportation = () => {
+const Stores = () => {
     const store = useStore();
     const { storesList } = store;
-
     return (
-        <div id="transportation-widget">
+        <div id="stores-widget">
             <section className="content-section">
-                <h1>转运大全</h1>
+                <h1>全部商家</h1>
                 <div className="cards-container">
                     {storesList.map((item) => (
                         <div className="card-wrapper">
@@ -30,4 +29,4 @@ const Transportation = () => {
     );
 };
 
-export default observer(Transportation);
+export default observer(Stores);
