@@ -1,50 +1,68 @@
 @import './BrandCard.less';
+@import '../../common/MyCarousel.less';
 
 #home-page-widget {
     width: 100%;
     margin: 0 auto;
     padding-bottom: 40px;
 
-    .promote-image {
-        width: 100%;
-        height: 280px;
-    }
+    .promote-content {
+        min-width: 1300px;
+        margin: 0 auto;
+        padding: 16px 50px;
 
-    .content-container {
-        margin: 20px auto;
-        width: 90%;
-        min-width: 1200px;
-        max-width: 1440px;
-        display: flex;
-        flex-direction: column;
-
-        .section-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 10px;
-            padding: 10px;
-
-            h1 {
-                margin-bottom: 0;
-            }
-
-            a {
-                color: #fa8c16;
-            }
+        .promote-image {
+            height: 360px;
         }
     }
 
-    .cards-container {
-        padding: 0;
-        margin: 0;
+    .content-container {
+        display: flex;
+        margin: 0 auto;
+        min-width: 1300px;
+        padding: 0px 120px 32px 120px;
 
-        .card-wrapper {
-            width: 20%;
-            float: left;
-            padding: 10px;
+        .l-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+
+            .section-title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 10px;
+                padding: 10px 10px 0 10px;
+
+                h1 {
+                    margin-bottom: 0;
+                }
+
+                a {
+                    color: #fa8c16;
+                }
+            }
+
+            .cards-container {
+                padding: 0;
+                margin: 0;
+
+                .card-wrapper {
+                    width: 20%;
+                    display: inline-block;
+                    padding: 10px;
+                    vertical-align: middle;
+                }
+            }
+        }
+
+        .home-rank-list {
+            width: 320px;
+            position: relative;
+            margin-left: 32px;
         }
     }
 
     .brand-card();
+    .carousel();
 }

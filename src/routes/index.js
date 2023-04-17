@@ -30,16 +30,6 @@ module.exports = function (server) {
 
     server.route({
         method: 'GET',
-        path: '/best-discount',
-        options: {
-            handler: createHandler((renderer) => {
-                renderer.addMainContentWidget(widgets.BestDiscount);
-            })
-        }
-    });
-
-    server.route({
-        method: 'GET',
         path: '/best-seller',
         options: {
             handler: createHandler((renderer) => {

@@ -5,7 +5,6 @@ import PasswordResetSimple from './PasswordResetSimple';
 import HomePage from './HomePage';
 import About from './About';
 import ErrorPage from './ErrorPage';
-import BestDiscount from './BestDiscount';
 import BestSeller from './BestSeller';
 import Transportation from './Transportation';
 import Notes from './Notes';
@@ -19,7 +18,6 @@ export default {
     HomePage,
     About,
     ErrorPage,
-    BestDiscount,
     BestSeller,
     Transportation,
     Notes,

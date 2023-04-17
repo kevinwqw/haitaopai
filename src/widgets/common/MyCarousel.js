@@ -21,12 +21,14 @@ export const MyCarousel = (props) => {
 
     return (
         <div className="carousel">
-            <h3>单品排行</h3>
-            <div className="action-bar">
-                <img onClick={onPreClick} src="/images/angle-left.svg"></img>
-                <span>{`${activeTabIndex}/3`}</span>
-                <img onClick={onNextClick} src="/images/angle-right.svg"></img>
-            </div>
+            <section className="carousel-title-section">
+                <h1>促销排行榜</h1>
+                <div className="action-bar">
+                    <img onClick={onPreClick} src="/images/angle-left.svg"></img>
+                    <span>{`${activeTabIndex}/3`}</span>
+                    <img onClick={onNextClick} src="/images/angle-right.svg"></img>
+                </div>
+            </section>
             <Carousel ref={carouselRef} autoplay dots={false} afterChange={onChange}>
                 {items.map((item) => {
                     return (

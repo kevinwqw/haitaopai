@@ -153,35 +153,9 @@ const GlobalHeader = () => {
             ]
         },
         {
-            label: (
-                <div>
-                    {'单品/优惠'}
-                    <DownOutlined style={{ marginLeft: 4, fontSize: 10 }} />
-                </div>
-            ),
-            key: 'best',
-            children: [
-                {
-                    label: '热门单品',
-                    key: 'bestSeller',
-                    href: 'best-seller',
-                    subMenuListItems: [
-                        {
-                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
-                        }
-                    ]
-                },
-                {
-                    label: '热门优惠',
-                    key: 'bestDiscount',
-                    href: 'best-discount',
-                    subMenuListItems: [
-                        {
-                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
-                        }
-                    ]
-                }
-            ]
+            label: '热门单品',
+            key: 'bestSeller',
+            href: 'best-seller'
         },
         {
             label: '海淘攻略',
@@ -205,7 +179,7 @@ const GlobalHeader = () => {
             <section className="header-content">
                 <div className="header-logo">
                     <a href="/" style={{ cursor: 'pointer' }}>
-                        <img className="icon" alt="" src="//static.rebatesme.cn/assets-1.5.52/images/pc/logo.svg" />
+                        <img className="icon" alt="" src="/images/haitaopai-logo.png" />
                     </a>
                 </div>
                 <div className="header-nav">

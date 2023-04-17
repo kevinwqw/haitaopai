@@ -2,11 +2,36 @@
     .carousel {
         position: relative;
         width: 100%;
-        padding-top: 44px;
+        padding-top: 53px;
+        margin-top: 10px;
 
-        h3 {
+        .carousel-title-section {
             position: absolute;
+            width: 100%;
             top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h1 {
+                margin-bottom: 0;
+            }
+
+            .action-bar {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1;
+
+                img {
+                    width: 12px;
+                    height: 12px;
+                    margin: 0 4px;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
         }
 
         .content {
@@ -40,25 +65,6 @@
                         -webkit-line-clamp: 2;
                         overflow: hidden;
                     }
-                }
-            }
-        }
-
-        .action-bar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 10px;
-            right: 0;
-            z-index: 1;
-
-            img {
-                width: 12px;
-                height: 12px;
-                margin: 0 4px;
-                &:hover {
-                    cursor: pointer;
                 }
             }
         }
