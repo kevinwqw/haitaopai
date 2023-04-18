@@ -1,6 +1,6 @@
 import React from 'react';
 import { observer } from 'mobx-react-lite';
-import BrandCard from '../../HomePage/components/BrandCard';
+import BrandCard from '../../common/BrandCard';
 
 import { useStore } from '../context';
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { observer } from 'mobx-react-lite';
 import { Carousel } from 'antd';
 
-import BrandCard from './BrandCard';
+import BrandCard from '../../common/BrandCard';
 import MyCarousel from '../../common/MyCarousel';
 import { useStore } from '../context';
 

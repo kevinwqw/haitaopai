@@ -1,34 +1,50 @@
-@import '../../HomePage/components/BrandCard.less';
+@import '../../common/BrandCard.less';
+@import '../../common/MyCarousel.less';
 
 #best-seller-widget {
-    margin: 0 auto;
-    padding: 30px 100px;
     display: flex;
+    margin: 0 auto;
+    min-width: 1300px;
+    padding: 0px 120px 32px 120px;
 
-    .content-section {
+    .l-content {
         flex-grow: 1;
-        .content-container {
-            margin: 0 auto;
-            width: 90%;
-            min-width: 1200px;
+        display: flex;
+        flex-direction: column;
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding: 10px 10px 0 10px;
 
             h1 {
-                padding: 12px 0;
+                margin-bottom: 0;
+            }
+
+            a {
+                color: #f22da0;
             }
         }
 
         .cards-container {
-            margin: 12px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, 220px);
-            justify-content: center;
-            grid-gap: 10px;
+            padding: 0;
+            margin: 0;
+
+            .card-wrapper {
+                width: 20%;
+                display: inline-block;
+                padding: 10px;
+                vertical-align: middle;
+            }
         }
     }
 
     .rank-list {
         width: 320px;
         position: relative;
+        margin-left: 32px;
     }
 
     .brand-card();
