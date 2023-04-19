@@ -92,54 +92,124 @@ const GlobalHeader = () => {
                     label: '美妆个护',
                     key: 'store2',
                     subMenuListItems: [
-                        {
-                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220511115236.jpg'
-                        },
-                        {
-                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
-                        },
-                        {
-                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20230220093823.png'
-                        },
-                        {
-                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20230414095333.png'
-                        }
+                        { imgSrc: `6`, link: `https://www.giorgioarmanibeauty-usa.com` },
+                        { imgSrc: `8`, link: `https://www.beautyexpert.com` },
+                        { imgSrc: `12`, link: `https://www.bluemercury.com` },
+                        { imgSrc: `13`, link: `https://www.bobbibrowncosmetics.com` },
+                        { imgSrc: `16`, link: `https://www.charlottetilbury.com/us` },
+                        { imgSrc: `17`, link: `https://www.cledepeaubeaute.com` },
+                        { imgSrc: `18`, link: `https://www.clinique.com` },
+                        { imgSrc: `21`, link: `https://www.colourpop.com` },
+                        { imgSrc: `23`, link: `https://www.cultbeauty.com` },
+                        { imgSrc: `28`, link: `https://www.elizabetharden.com` },
+                        { imgSrc: `29`, link: `https://www.esteelauder.com` },
+                        { imgSrc: `31`, link: `https://cn.feelunique.com` },
+                        { imgSrc: `34`, link: `https://www.fragrancenet.com` },
+                        { imgSrc: `40`, link: `https://www.hqhair.com` },
+                        { imgSrc: `42`, link: `https://www.itcosmetics.com` },
+                        { imgSrc: `44`, link: `https://www.jomalone.com` },
+                        { imgSrc: `46`, link: `https://kvdveganbeauty.com` },
+                        { imgSrc: `48`, link: `https://www.kiehls.com` },
+                        { imgSrc: `49`, link: `https://www.kyliecosmetics.com` },
+                        { imgSrc: `50`, link: `https://www.loccitane.com` },
+                        { imgSrc: `51`, link: `https://www.cremedelamer.com` },
+                        { imgSrc: `52`, link: `https://www.laroche-posay.us` },
+                        { imgSrc: `53`, link: `https://www.lancome-usa.com` },
+                        { imgSrc: `54`, link: `https://www.lookfantastic.cn` },
+                        { imgSrc: `55`, link: `https://www.lookfantastic.com` },
+                        { imgSrc: `58`, link: `https://www.maccosmetics.com` },
+                        { imgSrc: `60`, link: `https://www.makeupforever.com` },
+                        { imgSrc: `61`, link: `https://www.mankind.co.uk` },
+                        { imgSrc: `64`, link: `https://www.murad.com` },
+                        { imgSrc: `72`, link: `https://www.origins.com` },
+                        { imgSrc: `73`, link: `https://www.patmcgrath.com` },
+                        { imgSrc: `81`, link: `https://www.sephora.com` },
+                        { imgSrc: `82`, link: `https://www.sephora.com/ca/en/` },
+                        { imgSrc: `85`, link: `https://www.skinstore.com` },
+                        { imgSrc: `86`, link: `https://www.smashbox.com` },
+                        { imgSrc: `87`, link: `https://www.spacenk.com` },
+                        { imgSrc: `92`, link: `https://www.tatcha.com` },
+                        { imgSrc: `96`, link: `https://www.ulta.com` }
                     ]
                 },
+
                 {
                     label: '服饰包袋',
                     key: 'store3',
                     subMenuListItems: [
-                        {
-                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20210910180218.png'
-                        }
+                        { imgSrc: `1`, link: `https://www.24s.com` },
+                        { imgSrc: `2`, link: `https://www.adidas.com` },
+                        { imgSrc: `7`, link: `https://www.asos.com` },
+                        { imgSrc: `15`, link: `https://www.champion.com` },
+                        { imgSrc: `19`, link: `https://www.coachoutlet.com` },
+                        { imgSrc: `20`, link: `https://www.coach.com` },
+                        { imgSrc: `22`, link: `https://www.cos.com` },
+                        { imgSrc: `24`, link: `https://www.dvf.com` },
+                        { imgSrc: `35`, link: `https://www.freepeople.com` },
+                        { imgSrc: `47`, link: `https://www.katespade.com` },
+                        { imgSrc: `57`, link: `https://shop.lululemon.com` },
+                        { imgSrc: `63`, link: `https://www.michaelkors.com` },
+                        { imgSrc: `65`, link: `https://www.mytheresa.com` },
+                        { imgSrc: `68`, link: `https://www.nike.com` },
+                        { imgSrc: `69`, link: `https://www.nike.cn` },
+                        { imgSrc: `83`, link: `https://us.shein.com` },
+                        { imgSrc: `84`, link: `https://www.shopbop.com` },
+                        { imgSrc: `89`, link: `https://www.ssense.com` },
+                        { imgSrc: `90`, link: `https://www.stuartweitzman.com` },
+                        { imgSrc: `94`, link: `https://usa.tommy.com/en` },
+                        { imgSrc: `95`, link: `https://www.toryburch.com` },
+                        { imgSrc: `98`, link: `https://www.urbanoutfitters.com` },
+                        { imgSrc: `99`, link: `https://www.victoriassecret.com` }
                     ]
                 },
+
                 {
                     label: '球鞋潮鞋',
                     key: 'store4',
                     subMenuListItems: [
-                        {
-                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
-                        },
-                        {
-                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220511115236.jpg'
-                        },
-                        {
-                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
-                        },
-                        {
-                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20230220093823.png'
-                        }
+                        { imgSrc: `2`, link: `https://www.adidas.com` },
+                        { imgSrc: `27`, link: `https://www.ebay.com` },
+                        { imgSrc: `32`, link: `https://www.finishline.com` },
+                        { imgSrc: `33`, link: `https://www.footlocker.com` },
+                        { imgSrc: `68`, link: `https://www.nike.com` },
+                        { imgSrc: `69`, link: `https://www.nike.cn` }
                     ]
                 },
+
                 {
                     label: '户外运动',
                     key: 'store5',
                     subMenuListItems: [
-                        {
-                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20230220093823.png'
-                        }
+                        { imgSrc: `2`, link: `https://www.adidas.com` },
+                        { imgSrc: `32`, link: `https://www.finishline.com` },
+                        { imgSrc: `33`, link: `https://www.footlocker.com` },
+                        { imgSrc: `57`, link: `https://shop.lululemon.com` },
+                        { imgSrc: `68`, link: `https://www.nike.com` },
+                        { imgSrc: `69`, link: `https://www.nike.cn` },
+                        { imgSrc: `76`, link: `https://www.ray-ban.com` },
+                        { imgSrc: `88`, link: `https://www.speedo.com` },
+                        { imgSrc: `97`, link: `https://www.underarmour.com` }
+                    ]
+                },
+
+                {
+                    label: '食品保健',
+                    key: 'store6',
+                    subMenuListItems: [
+                        { imgSrc: `36`, link: `https://www.godiva.com` },
+                        { imgSrc: `41`, link: `https://www.iherb.com` },
+                        { imgSrc: `74`, link: `https://www.priceline.com` },
+                        { imgSrc: `75`, link: `https://www.qatarairways.com` },
+                        { imgSrc: `79`, link: `https://www.samsclub.com` }
+                    ]
+                },
+
+                {
+                    label: '母婴儿童',
+                    key: 'store7',
+                    subMenuListItems: [
+                        { imgSrc: `14`, link: `https://www.carters.com` },
+                        { imgSrc: `25`, link: `https://www.shopdisney.com` }
                     ]
                 }
             ]

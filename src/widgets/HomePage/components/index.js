@@ -22,7 +22,7 @@ const HomePage = () => {
 
     return (
         <div id="home-page-widget">
-            <Carousel className="promote-content" autoplay effect="fade">
+            <Carousel className="promote-content" autoplay dots effect="fade">
                 {promotePics.map((item) => (
                     <a href={item.link} target="_blank">
                         <div className="promote-image">
