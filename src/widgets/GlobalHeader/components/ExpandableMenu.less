@@ -68,6 +68,33 @@
             width: 800px;
             height: 380px;
             overflow-y: scroll;
+
+            > div {
+                flex-wrap: wrap;
+
+                a {
+                    > div {
+                        width: 130px;
+                        height: 100px;
+                        float: left;
+                        border-radius: 4px;
+                        background-color: #fff;
+                        box-shadow: 1px 1px 10px 4px rgba(0, 0, 0, 0.1);
+                        margin-left: 16px;
+                        margin-bottom: 16px;
+                        padding: 8px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        img {
+                            height: 40%;
+                            width: 85%;
+                        }
+                    }
+                }
+            }
+
             &:hover {
                 cursor: pointer;
             }

@@ -23,7 +23,8 @@ const BestSeller = () => {
                                     link={item.link}
                                     imgSrc={item.imgSrc}
                                     name={item.name}
-                                    rebateRate={item.rebateRate}
+                                    originalPrice={item.originalPrice}
+                                    currentPrice={item.currentPrice}
                                 />
                             </div>
                         ))}

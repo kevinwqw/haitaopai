@@ -36,22 +36,27 @@
 
         .content {
             margin: 0;
-            height: 450px;
+            height: 620px;
             text-align: center;
             background-color: #fff;
             padding: 10px;
+
+            h3 {
+                padding-bottom: 12px;
+            }
 
             .wrapper {
                 width: 100%;
                 display: flex;
                 margin-bottom: 10px;
 
-                div {
+                .content-body {
                     display: flex;
                     flex-direction: column;
                     padding: 4px 8px;
                     justify-content: space-between;
                     align-items: flex-start;
+                    flex-grow: 1;
 
                     p {
                         font-weight: 600;
@@ -64,6 +69,25 @@
                         -webkit-box-orient: vertical;
                         -webkit-line-clamp: 2;
                         overflow: hidden;
+                    }
+
+                    .price {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: baseline;
+
+                        b {
+                            font-size: 16px;
+                            color: #1f1f1f;
+                        }
+
+                        span {
+                            font-size: 12px;
+                            margin-left: 12px;
+                            text-decoration: line-through;
+                            color: rgba(0, 0, 0, 0.5);
+                        }
                     }
                 }
             }

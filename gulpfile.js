@@ -101,7 +101,7 @@ const copyPackageAssets = (dir, gulp, packageName, files) => (cb) => {
 
 const getCopyFeatureStaticFiles = (gulp, dir) => {
     const name = 'copy-feature-static-files';
-    const src = path.join(dir, 'src/statics/*');
+    const src = path.join(dir, 'src/statics/**/*');
     const output = path.join(dir, 'public', 'images');
     gulp.task(name, getCopyFunc(gulp, src, output));
     return name;

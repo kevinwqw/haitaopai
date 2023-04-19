@@ -49,27 +49,43 @@ const GlobalHeader = () => {
             key: 'stores',
             children: [
                 {
+                    label: '全部商家',
+                    key: 'store0',
+                    subMenuListItems: []
+                },
+                {
                     label: '综合商家',
                     key: 'store1',
                     subMenuListItems: [
-                        {
-                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
-                        },
-                        {
-                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220812185036.png'
-                        },
-                        {
-                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20210918153612.jpg'
-                        },
-                        {
-                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220511115236.jpg'
-                        },
-                        {
-                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
-                        },
-                        {
-                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20230220093823.png'
-                        }
+                        { imgSrc: `3`, link: `https://www.agoda.com` },
+                        { imgSrc: `4`, link: `https://www.alibaba.com` },
+                        { imgSrc: `5`, link: `https://www.amazon.com` },
+                        { imgSrc: `9`, link: `https://www.bergdorfgoodman.com` },
+                        { imgSrc: `10`, link: `https://www.bestbuy.com` },
+                        { imgSrc: `11`, link: `https://www.bloomingdale's.com` },
+                        { imgSrc: `26`, link: `https://www.dyson.com` },
+                        { imgSrc: `27`, link: `https://www.ebay.com` },
+                        { imgSrc: `30`, link: `https://www.farfetch.com` },
+                        { imgSrc: `37`, link: `https://www.harrods.com` },
+                        { imgSrc: `38`, link: `https://www.hilton.com` },
+                        { imgSrc: `39`, link: `https://www.hp.com` },
+                        { imgSrc: `43`, link: `https://www.jcpenney.com` },
+                        { imgSrc: `45`, link: `https://www.jomashop.com` },
+                        { imgSrc: `56`, link: `https://www.lordandtaylor.com` },
+                        { imgSrc: `59`, link: `https://www.macys.com` },
+                        { imgSrc: `62`, link: `https://www.marriott.com` },
+                        { imgSrc: `66`, link: `https://www.neimanmarcus.com` },
+                        { imgSrc: `67`, link: `https://www.net-a-porter.com` },
+                        { imgSrc: `70`, link: `https://www.nordstrom.com` },
+                        { imgSrc: `71`, link: `https://www.nordstromrack.com` },
+                        { imgSrc: `75`, link: `https://www.qatarairways.com` },
+                        { imgSrc: `77`, link: `https://www.saksfifthavenue.com` },
+                        { imgSrc: `78`, link: `https://www.saksoff5th.com` },
+                        { imgSrc: `79`, link: `https://www.samsclub.com` },
+                        { imgSrc: `80`, link: `https://www.selfridges.com` },
+                        { imgSrc: `91`, link: `https://www.target.com` },
+                        { imgSrc: `93`, link: `https://www.thehut.com` },
+                        { imgSrc: `100`, link: `https://www.walmart.com` }
                     ]
                 },
                 {
@@ -118,35 +134,11 @@ const GlobalHeader = () => {
                     ]
                 },
                 {
-                    label: '母婴儿童',
+                    label: '户外运动',
                     key: 'store5',
                     subMenuListItems: [
                         {
                             imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20230220093823.png'
-                        }
-                    ]
-                },
-                {
-                    label: '食品保健',
-                    key: 'store6',
-                    subMenuListItems: [
-                        {
-                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220511115236.jpg'
-                        },
-                        {
-                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
-                        },
-                        {
-                            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20230220093823.png'
-                        }
-                    ]
-                },
-                {
-                    label: '户外运动',
-                    key: 'store7',
-                    subMenuListItems: [
-                        {
-                            imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png'
                         }
                     ]
                 }

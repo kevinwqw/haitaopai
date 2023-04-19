@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const BrandCard = (props) => {
-    const { name, imgSrc, link, rebateRate } = props;
+    const { name, imgSrc, link, originalPrice, currentPrice } = props;
 
     const onClickHandler = () => {
         window.open(link);
@@ -13,8 +13,11 @@ const BrandCard = (props) => {
             <img alt="" src={imgSrc} />
             <div className="brand-content">
                 <div>
-                    <div className="content-title">{name}</div>
-                    <div className="content-body">{`最高${rebateRate}%返利`}</div>
+                    <span className="content-title">{name}</span>
+                    <div className="content-body">
+                        <b>{originalPrice}</b>
+                        <span>{currentPrice}</span>
+                    </div>
                 </div>
             </div>
         </div>

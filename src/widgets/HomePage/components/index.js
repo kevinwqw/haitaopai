@@ -12,20 +12,23 @@ const HomePage = () => {
     const { storeList, bestSellerlist, transportList, carouselItems } = store;
 
     const promotePics = [
-        { src: 'https://cdn.55haitao.com/bbs/data/attachment/banner/2023/04/12/5d760bba7db4437bf19d4fce8946e437.jpg' },
-        { src: 'https://cdn.55haitao.com/bbs/data/attachment/banner/2023/04/11/216e2bdf8aad690e1fb17ab227aa8567.jpg' },
-        { src: 'https://cdn.55haitao.com/bbs/data/attachment/banner/2023/03/31/2c329ae9ab2189dc9ff6403c1f42e3ac.jpg' },
-        { src: 'https://cdn.55haitao.com/bbs/data/attachment/banner/2023/04/03/02063992529c84cfeb9e199ec4daedfa.jpg' },
-        { src: 'https://cdn.55haitao.com/bbs/data/attachment/banner/2023/04/10/52969cc671e9e73215d3422917fcacdc.jpg' }
+        { src: '/images/posters/1.jpg', link: `https://www.ssense.com/` },
+        { src: '/images/posters/2.jpg', link: `https://www.toryburch.com/en-us/accessories/new-arrivals/` },
+        { src: '/images/posters/3.jpg', link: `https://slooks.top/6x96/65` },
+        { src: '/images/posters/4.jpg', link: `https://www.carters.com` },
+        { src: '/images/posters/5.jpg', link: `www.sephora.com` },
+        { src: '/images/posters/6.jpg', link: `https://surprise.katespade.com/shop/deals/todays-deal` }
     ];
 
     return (
         <div id="home-page-widget">
             <Carousel className="promote-content" autoplay effect="fade">
                 {promotePics.map((item) => (
-                    <div className="promote-image">
-                        <img width="100%" height="100%" alt="" src={item?.src} />
-                    </div>
+                    <a href={item.link} target="_blank">
+                        <div className="promote-image">
+                            <img width="100%" height="100%" alt="" src={item?.src} />
+                        </div>
+                    </a>
                 ))}
             </Carousel>
             <div className="content-container">
@@ -43,7 +46,8 @@ const HomePage = () => {
                                         link={item.link}
                                         imgSrc={item.imgSrc}
                                         name={item.name}
-                                        rebateRate={item.rebateRate}
+                                        originalPrice={item.originalPrice}
+                                        currentPrice={item.currentPrice}
                                     />
                                 </div>
                             ))}

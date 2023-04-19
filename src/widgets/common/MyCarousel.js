@@ -33,16 +33,22 @@ export const MyCarousel = (props) => {
                 {items.map((item) => {
                     return (
                         <div className="content">
-                            {item.map((prod) => {
-                                const { key, title, imgSrc, desc } = prod;
+                            <h3>{item.store}</h3>
+                            {item.prodList.map((prod) => {
+                                const { key, imgSrc, desc, link, originalPrice, currentPrice } = prod;
                                 return (
-                                    <div key={key} className="wrapper">
-                                        <img src={imgSrc} style={{ height: 100, width: 100 }}></img>
-                                        <div>
-                                            <p>{desc}</p>
-                                            <span>{title}</span>
+                                    <a href={link} target="_blank">
+                                        <div key={key} className="wrapper">
+                                            <img src={imgSrc} style={{ height: 100, width: 100 }}></img>
+                                            <div className="content-body">
+                                                <p>{desc}</p>
+                                                <div className="price">
+                                                    <b>{currentPrice}</b>
+                                                    <span>{originalPrice}</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 );
                             })}
                         </div>

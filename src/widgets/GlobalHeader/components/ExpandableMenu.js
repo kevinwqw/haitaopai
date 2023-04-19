@@ -41,15 +41,12 @@ const ExpandableMenu = (props) => {
                                                             {child.subMenuListItems &&
                                                                 child.subMenuListItems.map((subItem) => {
                                                                     return (
-                                                                        <a href="https://www.55haitao.com/">
-                                                                            <img
-                                                                                style={{
-                                                                                    height: 100,
-                                                                                    width: 100,
-                                                                                    margin: 10
-                                                                                }}
-                                                                                src={subItem.imgSrc}
-                                                                            />
+                                                                        <a href={subItem.link} target="_blank">
+                                                                            <div>
+                                                                                <img
+                                                                                    src={`/images/stores/${subItem.imgSrc}.png`}
+                                                                                />
+                                                                            </div>
                                                                         </a>
                                                                     );
                                                                 })}
