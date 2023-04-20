@@ -244,154 +244,154 @@ class Store {
 
     carouselItems = [
         {
-            store: 'SSENSE',
             prodList: [
                 {
-                    key: 'prod1-1',
-                    title: 'GUCCI White Interlocking G 1921 T-Shirt',
-                    desc: '1',
-                    imgSrc: 'https://slimages.macysassets.com/is/image/MCY/products/5/optimized/23960545_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1&fmt=webp',
+                    desc: 1,
+                    imgSrc: 'https://static.nike.com.cn/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/31c7fc77-983e-42b5-9fb6-83378a06cefa/wearallday-%E5%A5%B3%E5%AD%90%E8%BF%90%E5%8A%A8%E9%9E%8B-NpQ9lz.png',
+                    key: 'Nike-1',
+                    link: 'https://www.nike.com.cn/t/wearallday-%E5%A5%B3%E5%AD%90%E8%BF%90%E5%8A%A8%E9%9E%8B-NpQ9lz/CJ1677-100',
+                    originalPrice: '¥499.00',
+                    currentPrice: '¥399',
+                    title: 'Nike Wearallday 女子运动鞋'
+                },
+                {
+                    desc: 2,
+                    imgSrc: 'https://static.nike.com.cn/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/194ce632-1c1f-4f55-b237-3f2be82a06cb/dunk-low-retro-prm-%E7%94%B7%E5%AD%90%E8%BF%90%E5%8A%A8%E9%9E%8B-d1BSZj.png',
+                    key: 'Nike-2',
+                    link: 'https://www.nike.com.cn/t/dunk-low-retro-prm-%E7%94%B7%E5%AD%90%E8%BF%90%E5%8A%A8%E9%9E%8B-d1BSZj/DQ7681-001',
+                    originalPrice: '¥849.00',
+                    currentPrice: '¥599',
+                    title: 'Nike Dunk Low Retro PRM 男子运动鞋'
+                },
+                {
+                    desc: 3,
+                    imgSrc: 'https://static.nike.com.cn/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/cd8228c4-4280-4bdd-9cd9-465afe8e3841/sportswear-club-%E7%94%B7%E5%AD%90%E5%88%BA%E7%BB%A3%E6%9F%94%E8%BD%AF%E7%BA%AF%E6%A3%89t%E6%81%A4-w9mvm8.png',
+                    key: 'Nike-3',
+                    link: 'https://www.nike.com.cn/t/sportswear-club-%E7%94%B7%E5%AD%90%E5%88%BA%E7%BB%A3%E6%9F%94%E8%BD%AF%E7%BA%AF%E6%A3%89t%E6%81%A4-w9mvm8/AR4999-064',
+                    originalPrice: '¥199.00',
+                    currentPrice: '¥129',
+                    title: 'Nike Sportswear Club 男子刺绣柔软纯棉T恤'
+                },
+                {
+                    desc: 4,
+                    imgSrc: 'https://static.nike.com.cn/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/5eb3f240-d722-4652-bbe0-046de40c8067/pegasus-38-%E5%A5%B3%E5%AD%90%E5%85%AC%E8%B7%AF%E8%B7%91%E6%AD%A5%E9%9E%8B-2n7k0Z.png',
+                    key: 'Nike-4',
+                    link: 'https://www.nike.com.cn/t/pegasus-38-%E5%A5%B3%E5%AD%90%E5%85%AC%E8%B7%AF%E8%B7%91%E6%AD%A5%E9%9E%8B-2n7k0Z/CW7358-002',
+                    originalPrice: '￥899',
+                    currentPrice: '¥629',
+                    title: 'Nike Pegasus 38 女子公路跑步鞋'
+                },
+                {
+                    desc: 5,
+                    imgSrc: 'https://static.nike.com.cn/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9cab9ff7-ac96-4327-987d-50dfb9d83fcf/sportswear-essential-%E5%A5%B3%E5%AD%90%E5%8A%A0%E7%BB%92%E9%95%BF%E8%A3%A4-fsWSnt.png',
+                    key: 'Nike-5',
+                    link: 'https://www.nike.com.cn/t/sportswear-essential-%E5%A5%B3%E5%AD%90%E5%8A%A0%E7%BB%92%E9%95%BF%E8%A3%A4-fsWSnt/BV4090-010',
+                    originalPrice: '￥449',
+                    currentPrice: '¥249',
+                    title: 'Nike Sportswear Essential 女子加绒长裤'
+                }
+            ],
+            store: 'Nike(CN)'
+        },
+        {
+            prodList: [
+                {
+                    desc: 1,
+                    imgSrc: '/images/SSENSE-1.jpg',
+                    key: 'SSENSE-1',
                     link: 'https://www.ssense.com/en-cn/women/product/gucci/white-interlocking-g-1921-t-shirt/13622901',
                     originalPrice: '$565',
-                    currentPrice: '000:00'
+                    currentPrice: '$565',
+                    title: 'GUCCI White Interlocking G 1921 T-Shirt'
                 },
                 {
-                    key: 'prod1-2',
-                    title: 'MARNI Brown Micro Tropicalia Tote',
-                    desc: '1',
-                    imgSrc: 'https://slimages.macysassets.com/is/image/MCY/products/5/optimized/23960545_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1&fmt=webp',
+                    desc: 2,
+                    imgSrc: '/images/SSENSE-2.jpg',
+                    key: 'SSENSE-2',
                     link: 'https://www.ssense.com/en-cn/women/product/marni/brown-micro-tropicalia-tote/11753761',
                     originalPrice: '$550',
-                    currentPrice: '000:00'
+                    currentPrice: '$550',
+                    title: 'MARNI Brown Micro Tropicalia Tote'
                 },
                 {
-                    key: 'prod1-3',
-                    title: 'LEMAIRE Black Small Croissant Bag',
-                    desc: '1',
-                    imgSrc: 'https://slimages.macysassets.com/is/image/MCY/products/5/optimized/23960545_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1&fmt=webp',
+                    desc: 3,
+                    imgSrc: '/images/SSENSE-3.jpg',
+                    key: 'SSENSE-3',
                     link: 'https://www.ssense.com/en-cn/women/product/lemaire/black-small-croissant-bag/12319631',
                     originalPrice: '$805',
-                    currentPrice: '000:00'
+                    currentPrice: '$805',
+                    title: 'LEMAIRE Black Small Croissant Bag'
                 },
                 {
-                    key: 'prod1-4',
-                    title: 'SKIMS Tan Soft Lounge Slip Dress',
-                    desc: '1',
-                    imgSrc: 'https://slimages.macysassets.com/is/image/MCY/products/5/optimized/23960545_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1&fmt=webp',
+                    desc: 4,
+                    imgSrc: '/images/SSENSE-4.jpg',
+                    key: 'SSENSE-4',
                     link: 'https://www.ssense.com/en-cn/women/product/skims/tan-soft-lounge-slip-dress/11444531',
                     originalPrice: '$110',
-                    currentPrice: '000:00'
+                    currentPrice: '$110',
+                    title: 'SKIMS Tan Soft Lounge Slip Dress'
                 },
                 {
-                    key: 'prod1-5',
-                    title: 'MAISON MARGIELA Off-White & Gray Replica Sneakers',
-                    desc: '1',
-                    imgSrc: 'https://slimages.macysassets.com/is/image/MCY/products/5/optimized/23960545_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1&fmt=webp',
+                    desc: 5,
+                    imgSrc: '/images/SSENSE-5.jpg',
+                    key: 'SSENSE-5',
                     link: 'https://www.ssense.com/en-cn/women/product/maison-margiela/off-white-and-gray-replica-sneakers/12095481',
                     originalPrice: '$560',
-                    currentPrice: '000:00'
+                    currentPrice: '$560',
+                    title: 'MAISON MARGIELA Off-White & Gray Replica Sneakers'
                 }
-            ]
+            ],
+            store: 'SSENSE'
         },
         {
-            store: 'Farfetch',
             prodList: [
                 {
-                    key: 'prod2-1',
-                    title: 'Jacquemus Le Bob logo bucket hat',
-                    desc: '1',
-                    imgSrc: 'https://slimages.macysassets.com/is/image/MCY/products/5/optimized/23960545_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1&fmt=webp',
-                    link: 'https://www.farfetch.com/shopping/women/jacquemus-le-bob-logo-bucket-hat-item-17547404.aspx?storeid=13537',
-                    originalPrice: '$125',
-                    currentPrice: '000:00'
+                    desc: 1,
+                    imgSrc: 'https://www.sephora.com/productimages/sku/s2640241-main-zoom.jpg?imwidth=612',
+                    key: 'prod44',
+                    link: 'https://www.sephora.com/product/rare-beauty-by-selena-gomez-soft-pinch-liquid-blush-P97989778?skuId=2640241&icid2=products%20grid:p97989778:product',
+                    originalPrice: '$23.00',
+                    currentPrice: '$18.40',
+                    title: 'Rare Beauty by Selena Gomez Soft Pinch Liquid Blush'
                 },
                 {
-                    key: 'prod2-1',
-                    title: 'Miu Miu patent leather penny loafers',
-                    desc: '1',
-                    imgSrc: 'https://slimages.macysassets.com/is/image/MCY/products/5/optimized/23960545_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1&fmt=webp',
-                    link: 'https://www.farfetch.com/shopping/women/miu-miu-patent-leather-penny-loafers-item-18210538.aspx?storeid=11251',
-                    originalPrice: '$1,150',
-                    currentPrice: '000:00'
+                    desc: 2,
+                    imgSrc: 'https://www.sephora.com/productimages/sku/s2640209-main-zoom.jpg?imwidth=612',
+                    key: 'prod45',
+                    link: 'https://www.sephora.com/product/rare-beauty-by-selena-gomez-soft-pinch-tinted-lip-oil-P505568?skuId=2640209',
+                    originalPrice: '$20.00',
+                    currentPrice: '$16.00',
+                    title: 'Rare Beauty by Selena Gomez Soft Pinch Tinted Lip Oil'
                 },
                 {
-                    key: 'prod2-1',
-                    title: 'Saint Laurent Opyum 110mm slingback pumps',
-                    desc: '1',
-                    imgSrc: 'https://slimages.macysassets.com/is/image/MCY/products/5/optimized/23960545_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1&fmt=webp',
-                    link: 'https://www.farfetch.com/shopping/women/saint-laurent-opyum-110mm-slingback-pumps-item-17694427.aspx?storeid=13824',
-                    originalPrice: '$1,290',
-                    currentPrice: '000:00'
+                    desc: 3,
+                    imgSrc: 'https://www.sephora.com/productimages/sku/s2514859-main-zoom.jpg?imwidth=612',
+                    key: 'prod46',
+                    link: 'https://www.sephora.com/product/nars-afterglow-lip-shine-gloss-P479337?skuId=2514859',
+                    originalPrice: '$26.00',
+                    currentPrice: '$20.80',
+                    title: 'NARS Afterglow Lip Shine Gloss'
                 },
                 {
-                    key: 'prod2-1',
-                    title: 'Jacquemus Neve logo plaque cropped cardigan',
-                    desc: '1',
-                    imgSrc: 'https://slimages.macysassets.com/is/image/MCY/products/5/optimized/23960545_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1&fmt=webp',
-                    link: 'https://www.farfetch.com/shopping/women/jacquemus-neve-logo-plaque-cropped-cardigan-item-18084589.aspx?storeid=13161',
-                    originalPrice: '$300',
-                    currentPrice: '000:00'
+                    desc: 4,
+                    imgSrc: 'https://www.sephora.com/productimages/sku/s2670875-main-zoom.jpg?imwidth=612',
+                    key: 'prod47',
+                    link: 'https://www.sephora.com/product/mini-eyeshadow-palette-sublime-smoke-P505667?icid2=bestsellersmakeup_us_skugrid_ufe:p505667:product',
+                    originalPrice: '$29.00',
+                    currentPrice: '$23.20',
+                    title: 'PAT McGRATH LABS\nMini Eye Shadow Palette: Sublime Smoke'
                 },
                 {
-                    key: 'prod2-1',
-                    title: 'Longchamp Le Pliage Filet tote bag',
-                    desc: '1',
-                    imgSrc: 'https://slimages.macysassets.com/is/image/MCY/products/5/optimized/23960545_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1&fmt=webp',
-                    link: 'https://www.farfetch.cn/cn/shopping/women/longchamp-le-pliage-filet-item-17554069.aspx?storeid=13352',
-                    originalPrice: '$110 ',
-                    currentPrice: '000:00'
+                    desc: 5,
+                    imgSrc: 'https://www.sephora.com/productimages/sku/s2070712-main-zoom.jpg?imwidth=612',
+                    key: 'prod48',
+                    link: 'https://www.sephora.com/product/backstage-face-body-foundation-P432500?skuId=2070712',
+                    originalPrice: '$40.00',
+                    currentPrice: '$32.00',
+                    title: 'Dior BACKSTAGE Face & Body Foundation'
                 }
-            ]
-        },
-        {
-            store: 'Farfetch',
-            prodList: [
-                {
-                    key: 'prod3-1',
-                    title: 'Jacquemus Le Bob logo bucket hat',
-                    desc: '1',
-                    imgSrc: 'https://slimages.macysassets.com/is/image/MCY/products/5/optimized/23960545_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1&fmt=webp',
-                    link: 'https://www.farfetch.com/shopping/women/jacquemus-le-bob-logo-bucket-hat-item-17547404.aspx?storeid=13537',
-                    originalPrice: '$125 ',
-                    currentPrice: '000:00'
-                },
-                {
-                    key: 'prod3-2',
-                    title: 'Miu Miu patent leather penny loafers',
-                    desc: '1',
-                    imgSrc: 'https://slimages.macysassets.com/is/image/MCY/products/5/optimized/23960545_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1&fmt=webp',
-                    link: 'https://www.farfetch.com/shopping/women/miu-miu-patent-leather-penny-loafers-item-18210538.aspx?storeid=11251',
-                    originalPrice: '$1,150 ',
-                    currentPrice: '000:00'
-                },
-                {
-                    key: 'prod3-3',
-                    title: 'Saint Laurent Opyum 110mm slingback pumps',
-                    desc: '1',
-                    imgSrc: 'https://slimages.macysassets.com/is/image/MCY/products/5/optimized/23960545_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1&fmt=webp',
-                    link: 'https://www.farfetch.com/shopping/women/saint-laurent-opyum-110mm-slingback-pumps-item-17694427.aspx?storeid=13824',
-                    originalPrice: '$1,290 ',
-                    currentPrice: '000:00'
-                },
-                {
-                    key: 'pro3-4',
-                    title: 'Jacquemus Neve logo plaque cropped cardigan',
-                    desc: '1',
-                    imgSrc: 'https://slimages.macysassets.com/is/image/MCY/products/5/optimized/23960545_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1&fmt=webp',
-                    link: 'https://www.farfetch.com/shopping/women/jacquemus-neve-logo-plaque-cropped-cardigan-item-18084589.aspx?storeid=13161',
-                    originalPrice: '$300 ',
-                    currentPrice: '000:00'
-                },
-                {
-                    key: 'prod3-5',
-                    title: 'Longchamp Le Pliage Filet tote bag',
-                    desc: '1',
-                    imgSrc: 'https://slimages.macysassets.com/is/image/MCY/products/5/optimized/23960545_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1&fmt=webp',
-                    link: 'https://www.farfetch.cn/cn/shopping/women/longchamp-le-pliage-filet-item-17554069.aspx?storeid=13352',
-                    originalPrice: '$110 ',
-                    currentPrice: '000:00'
-                }
-            ]
+            ],
+            store: 'SEPHORA'
         }
     ];
 
