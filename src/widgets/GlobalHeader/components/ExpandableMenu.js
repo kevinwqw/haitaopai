@@ -28,16 +28,19 @@ const ExpandableMenu = (props) => {
                                                 </li>
                                             );
                                         })}
-                                        {index === 0 && (
-                                            <div className="content-style">
-                                                {item.children.map((child, childIndex) => {
-                                                    return (
-                                                        <div
-                                                            style={{
-                                                                display:
-                                                                    activeID === `li-${childIndex}` ? 'flex' : 'none'
-                                                            }}
-                                                        >
+                                        {index === 0 &&
+                                            item.children.map((child, childIndex) => {
+                                                return (
+                                                    <div
+                                                    className="content-style"
+                                                        style={{
+                                                            display:
+                                                                activeID === `li-${childIndex}` && childIndex !== 0
+                                                                    ? 'flex'
+                                                                    : 'none'
+                                                        }}
+                                                    >
+                                                        <div>
                                                             {child.subMenuListItems &&
                                                                 child.subMenuListItems.map((subItem) => {
                                                                     return (
@@ -51,10 +54,9 @@ const ExpandableMenu = (props) => {
                                                                     );
                                                                 })}
                                                         </div>
-                                                    );
-                                                })}
-                                            </div>
-                                        )}
+                                                    </div>
+                                                );
+                                            })}
                                     </ul>
                                 )}
                             </li>

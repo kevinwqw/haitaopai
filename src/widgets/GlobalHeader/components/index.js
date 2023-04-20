@@ -51,6 +51,7 @@ const GlobalHeader = () => {
                 {
                     label: '全部商家',
                     key: 'store0',
+                    href: 'stores',
                     subMenuListItems: []
                 },
                 {
