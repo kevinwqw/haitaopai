@@ -51,7 +51,7 @@ const GlobalHeader = () => {
                 {
                     label: '全部商家',
                     key: 'store0',
-                    href: 'stores',
+                    href: '/stores',
                     subMenuListItems: []
                 },
                 {
@@ -218,22 +218,22 @@ const GlobalHeader = () => {
         {
             label: '热门单品',
             key: 'bestSeller',
-            href: 'best-seller'
+            href: '/best-seller'
         },
         {
             label: '海淘攻略',
             key: 'note',
-            href: 'notes'
+            href: '/notes'
         },
         {
             label: '转运大全',
             key: 'trans',
-            href: 'transportation'
+            href: '/transportation'
         },
         {
             label: '关于海淘派',
             key: 'about',
-            href: 'about'
+            href: '/about'
         }
     ];
 
