@@ -1,7 +1,8 @@
 import { makeAutoObservable } from 'mobx';
 
 class Store {
-    noteId = 1;
+    noteId = '';
+
     constructor() {
         makeAutoObservable(this, {}, { autoBind: true });
     }

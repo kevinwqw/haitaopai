@@ -348,7 +348,7 @@ class Store {
         Object.assign(this, data);
     }
 
-    async init(params) {}
+    async init() {}
 }
 
 export default Store;

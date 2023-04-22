@@ -4,15 +4,15 @@ const getConfig = require('../../common/config');
 
 const fileMap = {};
 
-const getFileUrl = function ({ name, file }) {
-    const key = `${name}/${file}`;
+const getFileUrl = function ({ name, file }, prefix = '', parentFolder = 'public') {
+    const key = `${parentFolder}/${name}/${file}`;
     let value = fileMap[key];
     if (value) {
         return value;
     }
 
     const { rootDirectory } = getConfig();
-    const moduleAssetFolder = path.join(rootDirectory, 'public', 'assets', name);
+    const moduleAssetFolder = path.join(rootDirectory, parentFolder, 'assets', name);
     if (!fs.existsSync(moduleAssetFolder)) {
         return null;
     }
@@ -31,7 +31,7 @@ const getFileUrl = function ({ name, file }) {
         version = directories.sort()[directories.length - 1];
     }
 
-    value = `assets/${name}/${version}/${file}`;
+    value = `${prefix}/assets/${name}/${version}/${file}`;
     fileMap[key] = value;
     return value;
 };
