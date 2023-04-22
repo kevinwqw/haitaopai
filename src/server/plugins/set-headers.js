@@ -19,10 +19,8 @@ const getGlobalHeaders = () => {
 
 const pageHeaders = [
     { key: 'Vary', value: 'X-PJAX, X-Requested-With, Accept-Encoding' },
-    { key: 'Cache-Control', value: 'no-cache, no-store, must-revalidate' },
     { key: 'Pragma', value: 'no-cache' },
-    { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
-    { key: 'Expires', value: dayjs().subtract(1, 'day') }
+    { key: 'X-Frame-Options', value: 'SAMEORIGIN' }
 ];
 
 const assetCacheControlHeaderMap = {};
@@ -34,9 +32,9 @@ const getAssetCacheControlHeader = (request) => {
 
     let value = null;
     if (request.isAsset) {
-        value = isDevelopment() ? 'max-age=3600, must-revalidate, public' : 'max-age=31536000, must-revalidate, public';
+        value = 'max-age=36000, must-revalidate, public';
     }
-    assetCacheControlHeaderMap[path] = 'max-age=31536000, must-revalidate, public';
+    assetCacheControlHeaderMap[path] = 'max-age=36000, must-revalidate, public';
     return value;
 };
 
