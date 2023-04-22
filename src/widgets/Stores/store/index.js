@@ -1,151 +1,107 @@
 import { makeAutoObservable } from 'mobx';
 
 class Store {
-    storesList = [
-        {
-            key: 'kiehls-1',
-            name: 'Grow Gorgeous',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220613092052.png',
-            link: '',
-            rebateRate: 8
-        },
-        {
-            key: 'kiehls-2',
-            name: 'Grow Gorgeous',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220613092052.png',
-            link: '',
-            rebateRate: 8
-        },
-        {
-            key: 'kiehls-3',
-            name: 'Grow Gorgeous',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220613092052.png',
-            link: '',
-            rebateRate: 8
-        },
-        {
-            key: 'kiehls-4',
-            name: 'Grow Gorgeous',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220613092052.png',
-            link: '',
-            rebateRate: 8
-        },
-        {
-            key: 'kiehls-5',
-            name: 'Grow Gorgeous',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220613092052.png',
-            link: '',
-            rebateRate: 8
-        },
-        {
-            key: 'kiehls-6',
-            name: 'Grow Gorgeous',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220613092052.png',
-            link: '',
-            rebateRate: 8
-        },
-        {
-            key: 'kiehls-7',
-            name: 'Grow Gorgeous',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220613092052.png',
-            link: '',
-            rebateRate: 8
-        },
-        {
-            key: 'kiehls-8',
-            name: 'Grow Gorgeous',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220613092052.png',
-            link: '',
-            rebateRate: 8
-        },
-        {
-            key: 'kiehls-9',
-            name: 'Grow Gorgeous',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220613092052.png',
-            link: '',
-            rebateRate: 8
-        }
-    ];
-
-    carouselItems = [
-        [
-            {
-                key: 'prod1-1',
-                title: 'prod1-1',
-                imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/09/15382cb2d4ee12c5ca0731e0e61757d22c83.jpg',
-                desc: '买1送1！Clinique 倩碧 100H 水磁场面 30ml'
-            },
-            {
-                key: 'prod1-2',
-                title: 'prod1-2',
-                imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png',
-                desc: 'Coach Outlet：多款包袋降价！Mini Dempsey $111'
-            },
-            {
-                key: 'prod1-3',
-                title: 'prod1-3',
-                imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/11/1685b9142030c6274d1b95c2c4ec3995cf6e.png',
-                desc: '升级！雅顿美网：满额6.5折'
-            },
-            {
-                key: 'prod1-4',
-                title: 'prod1-4',
-                imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/11/16853c3e5f2b955c2c49d925714d89e2d870.png',
-                desc: '买1送1！Clinique 倩碧 100H 水磁场面 30ml'
-            }
-        ],
-        [
-            {
-                key: 'prod2-1',
-                title: 'prod2-1',
-                imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/14/16859fbdb5d1009500b8206eeca2deae671b.png',
-                desc: '买1送1！Clinique 倩碧 100H 水磁场面 30ml'
-            },
-            {
-                key: 'prod2-2',
-                title: 'prod2-2',
-                imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/11/16853c3e5f2b955c2c49d925714d89e2d870.png',
-                desc: 'Coach Outlet：多款包袋降价！Mini Dempsey $111'
-            },
-            {
-                key: 'prod2-3',
-                title: 'prod2-3',
-                imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/09/15382cb2d4ee12c5ca0731e0e61757d22c83.jpg',
-                desc: '买1送1！Clinique 倩碧 100H 水磁场面 30ml'
-            },
-            {
-                key: 'prod2-4',
-                title: 'prod2-4',
-                imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png',
-                desc: 'Coach Outlet：多款包袋降价！Mini Dempsey $111'
-            }
-        ],
-        [
-            {
-                key: 'prod3-1',
-                title: 'prod3-1',
-                imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/11/16853c3e5f2b955c2c49d925714d89e2d870.png',
-                desc: '买1送1！Clinique 倩碧 100H 水磁场面 30ml'
-            },
-            {
-                key: 'prod3-2',
-                title: 'prod3-2',
-                imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/14/16859fbdb5d1009500b8206eeca2deae671b.png',
-                desc: 'Coach Outlet：多款包袋降价！Mini Dempsey $111'
-            },
-            {
-                key: 'prod3-3',
-                title: 'prod3-3',
-                imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/13/1685912d056b78b4531c3cfdba2501a076fe.png',
-                desc: '买1送1！Clinique 倩碧 100H 水磁场面 30ml'
-            },
-            {
-                key: 'prod3-4',
-                title: 'prod3-4',
-                imgSrc: 'https://cdn.55haitao.com/bbs/data/attachment/deal/2023/04/09/15382cb2d4ee12c5ca0731e0e61757d22c83.jpg',
-                desc: 'Coach Outlet：多款包袋降价！Mini Dempsey $111'
-            }
-        ]
+    stores = [
+        { imgSrc: `1`, link: `https://www.24s.com` },
+        { imgSrc: `2`, link: `https://www.adidas.com` },
+        { imgSrc: `3`, link: `https://www.agoda.com` },
+        { imgSrc: `4`, link: `https://www.alibaba.com` },
+        { imgSrc: `5`, link: `https://www.amazon.com` },
+        { imgSrc: `6`, link: `https://www.giorgioarmanibeauty-usa.com` },
+        { imgSrc: `7`, link: `https://www.asos.com` },
+        { imgSrc: `8`, link: `https://www.beautyexpert.com` },
+        { imgSrc: `9`, link: `https://www.bergdorfgoodman.com` },
+        { imgSrc: `10`, link: `https://www.bestbuy.com` },
+        { imgSrc: `11`, link: `https://www.bloomingdale's.com` },
+        { imgSrc: `12`, link: `https://www.bluemercury.com` },
+        { imgSrc: `13`, link: `https://www.bobbibrowncosmetics.com` },
+        { imgSrc: `14`, link: `https://www.carters.com` },
+        { imgSrc: `15`, link: `https://www.champion.com` },
+        { imgSrc: `16`, link: `https://www.charlottetilbury.com/us` },
+        { imgSrc: `17`, link: `https://www.cledepeaubeaute.com` },
+        { imgSrc: `18`, link: `https://www.clinique.com` },
+        { imgSrc: `19`, link: `https://www.coachoutlet.com` },
+        { imgSrc: `20`, link: `https://www.coach.com` },
+        { imgSrc: `21`, link: `https://www.colourpop.com` },
+        { imgSrc: `22`, link: `https://www.cos.com` },
+        { imgSrc: `23`, link: `https://www.cultbeauty.com` },
+        { imgSrc: `24`, link: `https://www.dvf.com` },
+        { imgSrc: `25`, link: `https://www.shopdisney.com` },
+        { imgSrc: `26`, link: `https://www.dyson.com` },
+        { imgSrc: `27`, link: `https://www.ebay.com` },
+        { imgSrc: `28`, link: `https://www.elizabetharden.com` },
+        { imgSrc: `29`, link: `https://www.esteelauder.com` },
+        { imgSrc: `30`, link: `https://www.farfetch.com` },
+        { imgSrc: `31`, link: `https://cn.feelunique.com` },
+        { imgSrc: `32`, link: `https://www.finishline.com` },
+        { imgSrc: `33`, link: `https://www.footlocker.com` },
+        { imgSrc: `34`, link: `https://www.fragrancenet.com` },
+        { imgSrc: `35`, link: `https://www.freepeople.com` },
+        { imgSrc: `36`, link: `https://www.godiva.com` },
+        { imgSrc: `37`, link: `https://www.harrods.com` },
+        { imgSrc: `38`, link: `https://www.hilton.com` },
+        { imgSrc: `39`, link: `https://www.hp.com` },
+        { imgSrc: `40`, link: `https://www.hqhair.com` },
+        { imgSrc: `41`, link: `https://www.iherb.com` },
+        { imgSrc: `42`, link: `https://www.itcosmetics.com` },
+        { imgSrc: `43`, link: `https://www.jcpenney.com` },
+        { imgSrc: `44`, link: `https://www.jomalone.com` },
+        { imgSrc: `45`, link: `https://www.jomashop.com` },
+        { imgSrc: `46`, link: `https://kvdveganbeauty.com` },
+        { imgSrc: `47`, link: `https://www.katespade.com` },
+        { imgSrc: `48`, link: `https://www.kiehls.com` },
+        { imgSrc: `49`, link: `https://www.kyliecosmetics.com` },
+        { imgSrc: `50`, link: `https://www.loccitane.com` },
+        { imgSrc: `51`, link: `https://www.cremedelamer.com` },
+        { imgSrc: `52`, link: `https://www.laroche-posay.us` },
+        { imgSrc: `53`, link: `https://www.lancome-usa.com` },
+        { imgSrc: `54`, link: `https://www.lookfantastic.cn` },
+        { imgSrc: `55`, link: `https://www.lookfantastic.com` },
+        { imgSrc: `56`, link: `https://www.lordandtaylor.com` },
+        { imgSrc: `57`, link: `https://shop.lululemon.com` },
+        { imgSrc: `58`, link: `https://www.maccosmetics.com` },
+        { imgSrc: `59`, link: `https://www.macys.com` },
+        { imgSrc: `60`, link: `https://www.makeupforever.com` },
+        { imgSrc: `61`, link: `https://www.mankind.co.uk` },
+        { imgSrc: `62`, link: `https://www.marriott.com` },
+        { imgSrc: `63`, link: `https://www.michaelkors.com` },
+        { imgSrc: `64`, link: `https://www.murad.com` },
+        { imgSrc: `65`, link: `https://www.mytheresa.com` },
+        { imgSrc: `66`, link: `https://www.neimanmarcus.com` },
+        { imgSrc: `67`, link: `https://www.net-a-porter.com` },
+        { imgSrc: `68`, link: `https://www.nike.com` },
+        { imgSrc: `69`, link: `https://www.nike.cn` },
+        { imgSrc: `70`, link: `https://www.nordstrom.com` },
+        { imgSrc: `71`, link: `https://www.nordstromrack.com` },
+        { imgSrc: `72`, link: `https://www.origins.com` },
+        { imgSrc: `73`, link: `https://www.patmcgrath.com` },
+        { imgSrc: `74`, link: `https://www.priceline.com` },
+        { imgSrc: `75`, link: `https://www.qatarairways.com` },
+        { imgSrc: `76`, link: `https://www.ray-ban.com` },
+        { imgSrc: `77`, link: `https://www.saksfifthavenue.com` },
+        { imgSrc: `78`, link: `https://www.saksoff5th.com` },
+        { imgSrc: `79`, link: `https://www.samsclub.com` },
+        { imgSrc: `80`, link: `https://www.selfridges.com` },
+        { imgSrc: `81`, link: `https://www.sephora.com` },
+        { imgSrc: `82`, link: `https://www.sephora.com/ca/en/` },
+        { imgSrc: `83`, link: `https://us.shein.com` },
+        { imgSrc: `84`, link: `https://www.shopbop.com` },
+        { imgSrc: `85`, link: `https://www.skinstore.com` },
+        { imgSrc: `86`, link: `https://www.smashbox.com` },
+        { imgSrc: `87`, link: `https://www.spacenk.com` },
+        { imgSrc: `88`, link: `https://www.speedo.com` },
+        { imgSrc: `89`, link: `https://www.ssense.com` },
+        { imgSrc: `90`, link: `https://www.stuartweitzman.com` },
+        { imgSrc: `91`, link: `https://www.target.com` },
+        { imgSrc: `92`, link: `https://www.tatcha.com` },
+        { imgSrc: `93`, link: `https://www.thehut.com` },
+        { imgSrc: `94`, link: `https://usa.tommy.com/en` },
+        { imgSrc: `95`, link: `https://www.toryburch.com` },
+        { imgSrc: `96`, link: `https://www.ulta.com` },
+        { imgSrc: `97`, link: `https://www.underarmour.com` },
+        { imgSrc: `98`, link: `https://www.urbanoutfitters.com` },
+        { imgSrc: `99`, link: `https://www.victoriassecret.com` },
+        { imgSrc: `100`, link: `https://www.walmart.com` }
     ];
 
     constructor() {

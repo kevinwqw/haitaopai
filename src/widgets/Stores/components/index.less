@@ -16,11 +16,26 @@
         }
 
         .cards-container {
-            margin: 12px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, 220px);
-            justify-content: center;
-            grid-gap: 10px;
+            padding: 0;
+            margin: 0;
+
+            > div {
+                width: 20%;
+                display: inline-block;
+                padding: 10px;
+                vertical-align: middle;
+
+                img {
+                    height: 140px;
+                    width: 100%;
+                    padding: 40px 20px;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+
+                    &:hover {
+                        box-shadow: 1px 1px 10px 4px rgba(0, 0, 0, 0.1);
+                    }
+                }
+            }
         }
     }
 

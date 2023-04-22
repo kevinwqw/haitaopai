@@ -1,29 +1,33 @@
 import React from 'react';
 import { observer } from 'mobx-react-lite';
-import BrandCard from './BrandCard';
 
 import { useStore } from '../context';
 
 const Transportation = () => {
     const store = useStore();
-    const { storesList } = store;
+    const { transList } = store;
 
     return (
         <div id="transportation-widget">
             <section className="content-section">
                 <h1>转运大全</h1>
                 <div className="cards-container">
-                    {storesList.map((item) => (
-                        <div className="card-wrapper">
-                            <BrandCard
-                                key={item.key}
-                                link={item.link}
-                                imgSrc={item.imgSrc}
-                                name={item.name}
-                                rebateRate={item.rebateRate}
-                            />
-                        </div>
-                    ))}
+                    {transList.map((item) => {
+                        const { href, imgSrc } = item;
+                        const customList = [
+                            'images/transportation/老友记转运.png',
+                            'images/transportation/轻速国际.png',
+                            'images/transportation/转运国际.png'
+                        ];
+                        const customStyle = customList.indexOf(imgSrc) !== -1 ? { backgroundColor: '#000' } : {};
+                        return (
+                            <div>
+                                <a href={href}>
+                                    <img src={imgSrc} style={customStyle} />
+                                </a>
+                            </div>
+                        );
+                    })}
                 </div>
             </section>
         </div>

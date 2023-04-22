@@ -9,7 +9,7 @@ import { useStore } from '../context';
 
 const HomePage = () => {
     const store = useStore();
-    const { storeList, bestSellerlist, transportList, carouselItems } = store;
+    const { bestSellerlist, hotStoresList, transList, carouselItems } = store;
 
     const promotePics = [
         { src: '/images/posters/1.jpg', link: `https://www.ssense.com/` },
@@ -58,16 +58,12 @@ const HomePage = () => {
                             <h1>热门商家</h1>
                             <a href="/stores">{'查看全部>'}</a>
                         </div>
-                        <div className="cards-container">
-                            {storeList.map((item) => (
-                                <div className="card-wrapper">
-                                    <BrandCard
-                                        key={item.key}
-                                        link={item.link}
-                                        imgSrc={item.imgSrc}
-                                        name={item.name}
-                                        rebateRate={item.rebateRate}
-                                    />
+                        <div className="store-cards-container">
+                            {hotStoresList.map((store) => (
+                                <div>
+                                    <a href={store.link}>
+                                        <img src={`images/stores/${store.imgSrc}.png`} />
+                                    </a>
                                 </div>
                             ))}
                         </div>
@@ -77,18 +73,24 @@ const HomePage = () => {
                             <h1>海淘转运</h1>
                             <a href="/transportation">{'查看全部>'}</a>
                         </div>
-                        <div className="cards-container">
-                            {transportList.map((item) => (
-                                <div className="card-wrapper">
-                                    <BrandCard
-                                        key={item.key}
-                                        link={item.link}
-                                        imgSrc={item.imgSrc}
-                                        name={item.name}
-                                        rebateRate={item.rebateRate}
-                                    />
-                                </div>
-                            ))}
+                        <div className="trans-cards-container">
+                            {transList.map((item) => {
+                                const { href, imgSrc } = item;
+                                const customList = [
+                                    'images/transportation/老友记转运.png',
+                                    'images/transportation/轻速国际.png',
+                                    'images/transportation/转运国际.png'
+                                ];
+                                const customStyle =
+                                    customList.indexOf(imgSrc) !== -1 ? { backgroundColor: '#000' } : {};
+                                return (
+                                    <div>
+                                        <a href={href}>
+                                            <img src={imgSrc} style={customStyle} />
+                                        </a>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </section>
                 </div>

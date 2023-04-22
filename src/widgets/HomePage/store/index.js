@@ -1,78 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 
 class Store {
-    storeList = [
-        {
-            key: 'kiehls-1',
-            name: 'kiehls',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20210910181502.png',
-            link: '',
-            rebateRate: 16
-        },
-        {
-            key: 'kiehls-2',
-            name: 'kiehls',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
-            link: '',
-            rebateRate: 16
-        },
-        {
-            key: 'kiehls-3',
-            name: 'kiehls',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
-            link: '',
-            rebateRate: 16
-        },
-        {
-            key: 'kiehls-4',
-            name: 'kiehls',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20210910181502.png',
-            link: '',
-            rebateRate: 16
-        },
-        {
-            key: 'kiehls-5',
-            name: 'kiehls',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
-            link: '',
-            rebateRate: 16
-        },
-        {
-            key: 'kiehls-6',
-            name: 'kiehls',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
-            link: '',
-            rebateRate: 16
-        },
-        {
-            key: 'kiehls-7',
-            name: 'kiehls',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
-            link: '',
-            rebateRate: 16
-        },
-        {
-            key: 'kiehls-8',
-            name: 'kiehls',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
-            link: '',
-            rebateRate: 16
-        },
-        {
-            key: 'kiehls-9',
-            name: 'kiehls',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
-            link: '',
-            rebateRate: 16
-        },
-        {
-            key: 'kiehls-12',
-            name: 'kiehls',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
-            link: '',
-            rebateRate: 16
-        }
-    ];
     bestSellerlist = [
         {
             key: '1',
@@ -211,35 +139,52 @@ class Store {
             currentPrice: `$67.50`
         }
     ];
-    transportList = [
-        {
-            key: 'kiehls-1',
-            name: 'kiehls',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
-            link: '',
-            rebateRate: 16
-        },
-        {
-            key: 'kiehls-2',
-            name: 'kiehls',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
-            link: '',
-            rebateRate: 16
-        },
-        {
-            key: 'kiehls-3',
-            name: 'kiehls',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
-            link: '',
-            rebateRate: 16
-        },
-        {
-            key: 'kiehls-4',
-            name: 'kiehls',
-            imgSrc: 'https://cdn.55haitao.com//bbs/data/attachment/store/20220616092608.png',
-            link: '',
-            rebateRate: 16
-        }
+
+    hotStoresList = [
+        { imgSrc: `1`, link: `https://www.24s.com` },
+        { imgSrc: `3`, link: `https://www.agoda.com` },
+        { imgSrc: `9`, link: `https://www.bergdorfgoodman.com` },
+        { imgSrc: `11`, link: `https://www.bloomingdale's.com` },
+        { imgSrc: `20`, link: `https://www.coach.com` },
+        { imgSrc: `21`, link: `https://www.colourpop.com` },
+        { imgSrc: `22`, link: `https://www.cos.com` },
+        { imgSrc: `23`, link: `https://www.cultbeauty.com` },
+        { imgSrc: `24`, link: `https://www.dvf.com` },
+        { imgSrc: `30`, link: `https://www.farfetch.com` },
+        { imgSrc: `31`, link: `https://cn.feelunique.com` },
+        { imgSrc: `32`, link: `https://www.finishline.com` },
+        { imgSrc: `45`, link: `https://www.jomashop.com` },
+        { imgSrc: `51`, link: `https://www.cremedelamer.com` },
+        { imgSrc: `54`, link: `https://www.lookfantastic.cn` },
+        { imgSrc: `59`, link: `https://www.macys.com` },
+        { imgSrc: `65`, link: `https://www.mytheresa.com` },
+        { imgSrc: `70`, link: `https://www.nordstrom.com` },
+        { imgSrc: `77`, link: `https://www.saksfifthavenue.com` },
+        { imgSrc: `80`, link: `https://www.selfridges.com` },
+        { imgSrc: `81`, link: `https://www.sephora.com` },
+        { imgSrc: `82`, link: `https://www.sephora.com/ca/en/` },
+        { imgSrc: `89`, link: `https://www.ssense.com` }
+    ];
+
+    transList = [
+        { imgSrc: 'images/transportation/59转运.png', href: 'https://59express.com/' },
+        { imgSrc: 'images/transportation/傲天转运.jpg', href: 'https://www.ats-ex.com/' },
+        { imgSrc: 'images/transportation/168美中快运.png', href: 'http://www.mzkd168.com/' },
+        { imgSrc: 'images/transportation/八达网.jpg', href: 'http://www.8dexpress.com/' },
+        { imgSrc: 'images/transportation/吉祥邮.png', href: 'https://www.jixiangyou.com/' },
+        { imgSrc: 'images/transportation/可乐送海淘转运.png', href: 'https://www.cokeps.com/' },
+        { imgSrc: 'images/transportation/老友记转运.png', href: 'https://www.happyht.com/' },
+        { imgSrc: 'images/transportation/铭瑄海淘.jpg', href: 'https://www.happyht.com/' },
+        { imgSrc: 'images/transportation/轻速国际.png', href: 'https://www.qingsuus.com/' },
+        { imgSrc: 'images/transportation/润东国际快线.jpg', href: 'http://www.rundongex.com/' },
+        { imgSrc: 'images/transportation/建翼速运.jpg', href: 'http://www.jianyisuyun.com/' },
+        { imgSrc: 'images/transportation/天翼转运.jpg', href: 'http://www.tykd.com/' },
+        { imgSrc: 'images/transportation/友家速递.jpg', href: 'ttp://www.youjiaus.net/' },
+        { imgSrc: 'images/transportation/中环转运.jpg', href: 'http://www.zhonghuanus.com/' },
+        { imgSrc: 'images/transportation/转运国际.png', href: 'http://www.zygjex.com/' },
+        { imgSrc: 'images/transportation/天福转运.png', href: 'https://www.tianfuex.net/' },
+        { imgSrc: 'images/transportation/转运中国.jpg', href: 'https://www.uszcn.com/' },
+        { imgSrc: 'images/transportation/EMS海外购.jpg', href: 'http://buy.ems.com.cn/' }
     ];
 
     carouselItems = [

@@ -5,7 +5,7 @@ const NoteCard = (props) => {
     const { imgSrc, title, description, link } = props;
 
     const onClickHandler = () => {
-        window.open(link);
+        window.location.href = link;
     };
 
     return (

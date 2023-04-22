@@ -50,6 +50,17 @@ module.exports = function (server) {
 
     server.route({
         method: 'GET',
+        path: '/article/{noteId}',
+        options: {
+            handler: createHandler((renderer, assetManager, request) => {
+                const { noteId } = request.params;
+                renderer.addMainContentWidget(widgets.ShoppingArticle, { noteId });
+            })
+        }
+    });
+
+    server.route({
+        method: 'GET',
         path: '/transportation',
         options: {
             handler: createHandler((renderer) => {
