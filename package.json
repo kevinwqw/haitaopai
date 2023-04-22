@@ -17,7 +17,7 @@
         "dev": "npm run build && node ./src/server/dev.js",
         "dev.js": "node ./src/server/dev.js",
         "start": "npm run build && node ./src/server/server.js",
-        "deploy": "node --max-old-space-size=4096 ./src/server/server.js",
+        "deploy:haitaopai": "node --max-old-space-size=4096 ./src/server/server.js",
         "build-ui": "npm run build && npm run copy-public"
     },
     "author": "",
