@@ -43,14 +43,13 @@ module.exports = async (server) => {
 
                 try {
                     const result = await client.post('/user/login', JSON.stringify(requestData), requestConfig);
-                    const { email, scope, token } = result.data.data;
+                    const { token } = result.data.data;
                     request.cookieAuth.set({
-                        email,
-                        scope,
-                        authToken: `Bearer ${token}`,
+                        authToken: `Bearer ${token}`
                     });
 
-                    return { success: true, data: { scope } };
+                    const isLogin = token !== undefined;
+                    return { success: true, data: { isLogin } };
                 } catch (error) {
                     if (error.response?.status === 503) {
                         return { success: false, errorMsg: '网络异常，请稍后再试' };

@@ -7,10 +7,6 @@ class Sdk {
         this._contextId = contextId;
     }
 
-    userLogin(userInfo) {
-        return callService('userLogin', [userInfo], this._contextId);
-    }
-
     userSignup(userInfo) {
         return callService('userSignup', [userInfo], this._contextId);
     }

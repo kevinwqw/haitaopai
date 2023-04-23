@@ -248,10 +248,6 @@ const GlobalHeader = () => {
             return Promise.reject(new Error(ENTER_PASSWORD));
         }
 
-        if (value.length < 4 || value.length > 20) {
-            return Promise.reject(new Error(PASSWORD_RULE));
-        }
-
         return Promise.resolve();
     };
 

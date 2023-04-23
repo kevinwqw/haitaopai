@@ -14,8 +14,8 @@ class Store {
     }
 
     async init(params) {
-        const { email } = params;
-        this.isLogin = !!email;
+        const { isUserLogin } = params;
+        this.isLogin = !!isUserLogin;
     }
 
     async userLogin(userInfo) {
@@ -33,7 +33,7 @@ class Store {
             .then((data) => {
                 this.isLoading = false;
                 if (data.success) {
-                    this.scope = data.data.scope;
+                    this.isLogin = data.data.isLogin;
                     this.isLoginSuccess = data.success;
                 } else {
                     this.setLoginErrorMsg(data.errorMsg);
