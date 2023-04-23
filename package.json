@@ -1,6 +1,6 @@
 {
     "name": "haitaopai",
-    "version": "0.0.8",
+    "version": "0.0.1",
     "description": "Hai Tao Pai",
     "repository": "https://github.com/KevinWangzzz/haitaopai",
     "main": "lib/index.js",
