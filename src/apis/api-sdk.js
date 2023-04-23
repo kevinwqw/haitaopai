@@ -9,16 +9,12 @@ class ApiSdk {
     }
 
     /** User */
+    async getLogin(data) {
+        return ApiHelper.post(`${BaseURL}/user/login`, data, this.contextId);
+    }
+
     async userSignup(data) {
         return ApiHelper.post(`${BaseURL}/user/register`, data, this.contextId);
-    }
-
-    async userPasswordReset(data) {
-        return ApiHelper.post(`${BaseURL}/user/updatePassword`, data, this.contextId);
-    }
-
-    async getAuthCode(phone) {
-        return ApiHelper.get(`${BaseURL}/user/getAuthCode?phone=${phone}`, this.contextId);
     }
 }
 

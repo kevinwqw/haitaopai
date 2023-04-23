@@ -1,17 +1,23 @@
 /* eslint-disable no-script-url */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
-import { Button, Dropdown, Menu, Drawer } from 'antd';
-import { UserOutlined, DownOutlined } from '@ant-design/icons';
+import CryptoJS from 'crypto-js';
+import { Button, Dropdown, Menu, Drawer, Modal, Form, Input, Checkbox } from 'antd';
+import { UserOutlined, DownOutlined, MailOutlined, LockOutlined } from '@ant-design/icons';
 import ExpandableMenu from './ExpandableMenu';
+import { loginLabels } from '../../common/constant';
 
 import { useStore } from '../context';
+const { ENTER_PASSWORD, PASSWORD_RULE, REMEMBER } = loginLabels;
 
 const GlobalHeader = () => {
     const store = useStore();
-    const { isLogin } = store;
+    const { isLogin, isLoading, userLogin, isLoginSuccess, loginErrorMsg, setLoginErrorMsg } = store;
 
     const [visible, setVisible] = useState(false);
+    const [loginModalVisible, setLoginModalVisible] = useState(false);
+    const [modalTitle, setModalTitle] = useState(null);
+    const [loginForm] = Form.useForm();
 
     const handleUserMenuClick = (target) => {
         const { key } = target;
@@ -237,6 +243,82 @@ const GlobalHeader = () => {
         }
     ];
 
+    const validatePassword = (_, value) => {
+        if (!value) {
+            return Promise.reject(new Error(ENTER_PASSWORD));
+        }
+
+        if (value.length < 4 || value.length > 20) {
+            return Promise.reject(new Error(PASSWORD_RULE));
+        }
+
+        return Promise.resolve();
+    };
+
+    const enCrypt = (value) => CryptoJS.AES.encrypt(value, 'haitaopai');
+
+    const deCrypt = (value) => {
+        const bytes = CryptoJS.AES.decrypt(value.toString(), 'haitaopai');
+        const plainText = bytes.toString(CryptoJS.enc.Utf8);
+        return plainText;
+    };
+
+    const setUsrAndPwd = (usr, pwd, expire = 365) => {
+        const date = new Date();
+        date.setDate(date.getDate() + expire);
+        document.cookie = `htp_usr=${usr}; expires=${date}`;
+        document.cookie = `htp_pwd=${enCrypt(pwd)}; expires=${date}`;
+    };
+
+    const getCookie = (cookieName) => {
+        const cookies = document.cookie.split('; ');
+        const matchedCookie = cookies.filter((cookie) => cookie.split('=')[0] === cookieName);
+        if (matchedCookie.length !== 0) {
+            return matchedCookie[0].replace(`${cookieName}=`, '').trim();
+        }
+
+        return '';
+    };
+
+    const onFinish = async (values) => {
+        const { email, password, remember } = values;
+        const userInfo = { email, password };
+        if (remember) {
+            setUsrAndPwd(email, password);
+        } else if (getCookie('htp_usr') && getCookie('htp_pwd')) {
+            setUsrAndPwd(null, null, -1);
+        }
+        userLogin(userInfo);
+    };
+
+    useEffect(() => {
+        const cachedUsr = getCookie('htp_usr');
+        const cachedPwd = getCookie('htp_pwd');
+        if (cachedUsr && cachedPwd) {
+            loginForm.setFieldsValue({ email: cachedUsr, password: deCrypt(cachedPwd), remember: true });
+        }
+    }, []);
+
+    useEffect(() => {
+        if (isLoginSuccess) {
+            window.location.href = window.location.origin;
+        }
+    }, [isLoginSuccess]);
+
+    const handleFormValueChange = () => {
+        if (loginErrorMsg) setLoginErrorMsg('');
+    };
+
+    const onLoginClick = () => {
+        setModalTitle('登录');
+        setLoginModalVisible(true);
+    };
+
+    const onSignupClick = () => {
+        setModalTitle('注册');
+        setLoginModalVisible(true);
+    };
+
     return (
         <header id="global-header-widget">
             <section className="header-content">
@@ -248,7 +330,6 @@ const GlobalHeader = () => {
                 <div className="header-nav">
                     {isLogin ? (
                         <div>
-                            <UserOutlined />
                             <Dropdown
                                 trigger="click"
                                 placement="bottom"
@@ -261,19 +342,16 @@ const GlobalHeader = () => {
                                     }
                                 }}
                             >
-                                <span>
-                                    {'我的账户'}
-                                    <DownOutlined style={{ marginLeft: 4 }} />
-                                </span>
+                                <UserOutlined />
                             </Dropdown>
                         </div>
                     ) : (
                         <div>
-                            <Button className="login-btn" type="link" href="/account/login">
-                                {'登录'}
+                            <Button className="login-btn" type="link" onClick={onLoginClick}>
+                                登录
                             </Button>
-                            <Button className="signup-btn" type="link" href="/account/signup">
-                                {'立即加入'}
+                            <Button className="signup-btn" type="link" onClick={onSignupClick}>
+                                立即加入
                             </Button>
                         </div>
                     )}
@@ -283,7 +361,7 @@ const GlobalHeader = () => {
                     width="40vw"
                     placement="right"
                     onClose={onClose}
-                    visible={visible}
+                    open={visible}
                     contentWrapperStyle={{ marginTop: 61 }}
                     bodyStyle={{ padding: 0 }}
                 >
@@ -297,6 +375,68 @@ const GlobalHeader = () => {
                     <ExpandableMenu items={menuItems} />
                 </nav>
             </section>
+
+            <Modal
+                title={modalTitle}
+                open={loginModalVisible}
+                footer={null}
+                onCancel={() => setLoginModalVisible(false)}
+            >
+                <Form
+                    onValuesChange={handleFormValueChange}
+                    form={loginForm}
+                    wrapperCol={{ span: 16, offset: 4 }}
+                    onFinish={onFinish}
+                    layout="vertical"
+                >
+                    <Form.Item
+                        name="email"
+                        validateTrigger="onBlur"
+                        rules={[{ type: 'email', required: true, message: '邮箱格式不正确' }]}
+                    >
+                        <Input
+                            style={{ borderRadius: 20, height: 40 }}
+                            autoComplete="off"
+                            prefix={<MailOutlined />}
+                            placeholder="邮箱"
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        style={{ marginBottom: 0 }}
+                        name="password"
+                        rules={[{ required: true, validator: validatePassword }]}
+                    >
+                        <Input.Password
+                            style={{ borderRadius: 20, height: 40 }}
+                            autoComplete="new-password"
+                            prefix={<LockOutlined />}
+                            type="password"
+                            placeholder="密码"
+                        />
+                    </Form.Item>
+                    {loginErrorMsg && (
+                        <Form.Item style={{ marginBottom: 0 }}>
+                            <span style={{ color: '#ff4d4f' }}>{loginErrorMsg}</span>
+                        </Form.Item>
+                    )}
+                    <Form.Item style={{ marginTop: 24 }}>
+                        <Button
+                            style={{ borderRadius: 20, height: 40 }}
+                            loading={isLoading}
+                            block
+                            type="primary"
+                            htmlType="submit"
+                        >
+                            登录
+                        </Button>
+                    </Form.Item>
+                    <Form.Item>
+                        <Form.Item name="remember" valuePropName="checked" noStyle>
+                            <Checkbox>{REMEMBER}</Checkbox>
+                        </Form.Item>
+                    </Form.Item>
+                </Form>
+            </Modal>
         </header>
     );
 };

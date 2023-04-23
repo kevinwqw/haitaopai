@@ -1,14 +1,14 @@
 const BaseService = require('../../common/BaseService');
 const ApiSdk = require('../../apis/api-sdk');
 
-class GetAuthCodeService extends BaseService {
+class SignupService extends BaseService {
     constructor(contextId) {
         super(contextId);
         this.apiSdk = new ApiSdk(contextId);
     }
 
-    async execute(phone) {
-        const result = await this.apiSdk.getAuthCode(phone);
+    async execute(userInfo) {
+        const result = await this.apiSdk.userSignup(userInfo);
         if (result.success && result.data) {
             return super.createResult(result.data);
         }
@@ -17,7 +17,7 @@ class GetAuthCodeService extends BaseService {
 }
 
 module.exports = {
-    name: 'getAuthCode',
-    service: GetAuthCodeService,
+    name: 'userSignup',
+    service: SignupService,
     permissions: { anonymous: true }
 };

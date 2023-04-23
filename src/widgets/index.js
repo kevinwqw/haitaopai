@@ -1,7 +1,4 @@
 import GlobalHeader from './GlobalHeader';
-import Login from './Login';
-import Signup from './Signup';
-import PasswordResetSimple from './PasswordResetSimple';
 import HomePage from './HomePage';
 import About from './About';
 import ErrorPage from './ErrorPage';
@@ -13,9 +10,6 @@ import ShoppingArticle from './ShoppingArticle';
 
 export default {
     GlobalHeader,
-    Login,
-    Signup,
-    PasswordResetSimple,
     HomePage,
     About,
     ErrorPage,

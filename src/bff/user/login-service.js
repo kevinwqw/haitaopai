@@ -1,14 +1,14 @@
 const BaseService = require('../../common/BaseService');
 const ApiSdk = require('../../apis/api-sdk');
 
-class UserPasswordResetService extends BaseService {
+class LoginService extends BaseService {
     constructor(contextId) {
         super(contextId);
         this.apiSdk = new ApiSdk(contextId);
     }
 
-    async execute(phone, captcha, password) {
-        const result = await this.apiSdk.userPasswordReset({ phone, captcha, password });
+    async execute(userInfo) {
+        const result = await this.apiSdk.getLogin(userInfo);
         if (result.success && result.data) {
             return super.createResult(result.data);
         }
@@ -17,7 +17,7 @@ class UserPasswordResetService extends BaseService {
 }
 
 module.exports = {
-    name: 'userPasswordReset',
-    service: UserPasswordResetService,
+    name: 'userLogin',
+    service: LoginService,
     permissions: { anonymous: true }
 };

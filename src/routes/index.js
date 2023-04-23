@@ -81,36 +81,6 @@ module.exports = function (server) {
 
     server.route({
         method: 'GET',
-        path: '/account/login',
-        options: {
-            handler: createHandler((renderer) => {
-                renderer.addMainContentWidget(widgets.Login, { widgetName: 'login' });
-            })
-        }
-    });
-
-    server.route({
-        method: 'GET',
-        path: '/account/signup',
-        options: {
-            handler: createHandler((renderer) => {
-                renderer.addMainContentWidget(widgets.Signup, { widgetName: 'signup' });
-            })
-        }
-    });
-
-    server.route({
-        method: 'GET',
-        path: '/account/password-reset',
-        options: {
-            handler: createHandler((renderer) => {
-                renderer.addMainContentWidget(widgets.PasswordResetSimple, { widgetName: 'passwordReset' });
-            })
-        }
-    });
-
-    server.route({
-        method: 'GET',
         path: '/not-found',
         options: {
             handler: errorHandler

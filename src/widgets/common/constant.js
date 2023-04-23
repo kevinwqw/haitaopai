@@ -9,7 +9,7 @@ export const globalHeaderLabels = {
 };
 
 export const loginLabels = {
-    WELCOME_BACK: '欢迎回来👋',
+    WELCOME_BACK: '欢迎加入👋',
     LOGIN_TITLE: '登录账号',
     MOBILE_NO: '手机号',
     PASSWORD: '密码',

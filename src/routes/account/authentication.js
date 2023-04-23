@@ -32,8 +32,8 @@ module.exports = async (server) => {
             auth: false,
             handler: async (request) => {
                 const client = axios.create({ baseURL: config.baseUrl });
-                const { phone, password } = request.payload;
-                const requestData = { phone, password };
+                const { email, password } = request.payload;
+                const requestData = { email, password };
 
                 const requestConfig = {
                     headers: {
@@ -43,15 +43,11 @@ module.exports = async (server) => {
 
                 try {
                     const result = await client.post('/user/login', JSON.stringify(requestData), requestConfig);
-                    const { username, email, wechat, scope, token, inviteCode } = result.data.data;
+                    const { email, scope, token } = result.data.data;
                     request.cookieAuth.set({
-                        phone,
                         email,
-                        username,
-                        wechat,
                         scope,
                         authToken: `Bearer ${token}`,
-                        inviteCode
                     });
 
                     return { success: true, data: { scope } };

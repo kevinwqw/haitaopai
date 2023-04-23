@@ -30,8 +30,8 @@ const getUseInfo = (request) => {
 const createHandler = (addWidgets) => async (request, h) => {
     const { assetManager, renderer } = createManagers(request, h);
     const userInfo = getUseInfo(request);
-    const phone = userInfo ? userInfo.phone : null;
-    renderer.addHeaderWidget(widgets.GlobalHeader, { phone });
+    const email = userInfo ? userInfo.email : null;
+    renderer.addHeaderWidget(widgets.GlobalHeader, { email });
     if (addWidgets) {
         await addWidgets(renderer, assetManager, request);
     }
@@ -51,7 +51,10 @@ const notFoundHandler = async (request, h) => {
 
 const renderErrorPage = async (request, h, errorCode) => {
     if (errorCode === UNAUTHORIZED_STATUS_CODE) {
-        const response = await createHandler(addErrorWidget('未授权', errorCode, '你没有此页面的访问权限。'))(request, h);
+        const response = await createHandler(addErrorWidget('未授权', errorCode, '你没有此页面的访问权限。'))(
+            request,
+            h
+        );
         return response.code(errorCode);
     }
 
