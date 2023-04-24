@@ -16,7 +16,7 @@ const GlobalHeader = () => {
         isLogin,
         isLoading,
         userLogin,
-        useSignup,
+        userSignup,
         isLoginSuccess,
         loginErrorMsg,
         setLoginErrorMsg,
@@ -297,7 +297,7 @@ const GlobalHeader = () => {
         if (modalTitle === '登录') {
             userLogin(userInfo);
         } else {
-            useSignup(userInfo);
+            userSignup(userInfo);
         }
     };
 
@@ -386,12 +386,7 @@ const GlobalHeader = () => {
                 </nav>
             </section>
 
-            <Modal
-                title={modalTitle}
-                open={isLoginModalVisible}
-                footer={null}
-                onCancel={() => setLoginModalVisible(false)}
-            >
+            <Modal title={modalTitle} open={isLoginModalVisible} footer={null} onCancel={() => setModalVisible(false)}>
                 <Form
                     onValuesChange={handleFormValueChange}
                     form={loginForm}
@@ -437,7 +432,7 @@ const GlobalHeader = () => {
                             type="primary"
                             htmlType="submit"
                         >
-                            登录
+                            {modalTitle}
                         </Button>
                     </Form.Item>
                     <Form.Item>

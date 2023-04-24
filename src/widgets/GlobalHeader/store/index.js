@@ -1,4 +1,5 @@
 import { makeAutoObservable } from 'mobx';
+import BffSdk from '../../sdk';
 
 class Store {
     isLogin = false;
@@ -52,9 +53,28 @@ class Store {
         if (res.success) {
             if (res.data.code === 200) {
                 this.isSignupSuccess = true;
+                fetch('/login/callback', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(userInfo)
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        this.isLoading = false;
+                        if (data.success) {
+                            this.isLogin = data.data.isLogin;
+                            this.setModalVisible(false);
+                        } else {
+                            this.setLoginErrorMsg(data.errorMsg);
+                        }
+                    })
+                    .catch(() => {
+                        this.setLoginErrorMsg('跳转登录失败，请重新登录');
+                    });
             } else {
                 this.isSignupSuccess = false;
-                this.setModalVisible(false);
                 this.signupErrorMsg = `注册失败，${res.data.message}`;
             }
         } else {
