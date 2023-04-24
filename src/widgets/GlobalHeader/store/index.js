@@ -1,9 +1,10 @@
 import { makeAutoObservable } from 'mobx';
 
 class Store {
-    isLogin = null;
+    isLogin = false;
     loginErrorMsg = null;
     isLoading = false;
+    isLoginModalVisible = false;
 
     constructor() {
         makeAutoObservable(this, {}, { autoBind: true });
@@ -34,7 +35,7 @@ class Store {
                 this.isLoading = false;
                 if (data.success) {
                     this.isLogin = data.data.isLogin;
-                    this.isLoginSuccess = data.success;
+                    this.setModalVisible(false);
                 } else {
                     this.setLoginErrorMsg(data.errorMsg);
                 }
@@ -44,8 +45,31 @@ class Store {
             });
     }
 
+    async userSignup(userInfo) {
+        this.isLoading = true;
+        const sdk = new BffSdk();
+        const res = await sdk.userSignup(userInfo);
+        if (res.success) {
+            if (res.data.code === 200) {
+                this.isSignupSuccess = true;
+            } else {
+                this.isSignupSuccess = false;
+                this.setModalVisible(false);
+                this.signupErrorMsg = `注册失败，${res.data.message}`;
+            }
+        } else {
+            this.isSignupSuccess = false;
+            this.signupErrorMsg = '注册失败，请稍后再试';
+        }
+        this.isLoading = false;
+    }
+
     setLoginErrorMsg(msg) {
         this.loginErrorMsg = msg;
+    }
+
+    setModalVisible(state) {
+        this.isLoginModalVisible = state;
     }
 }
 

@@ -30,7 +30,7 @@ const getUseInfo = (request) => {
 const createHandler = (addWidgets) => async (request, h) => {
     const { assetManager, renderer } = createManagers(request, h);
     const userInfo = getUseInfo(request);
-    const isUserLogin = userInfo && userInfo.token !== undefined;
+    const isUserLogin = userInfo && userInfo.authToken !== undefined;
     renderer.addHeaderWidget(widgets.GlobalHeader, { isUserLogin });
     if (addWidgets) {
         await addWidgets(renderer, assetManager, request);

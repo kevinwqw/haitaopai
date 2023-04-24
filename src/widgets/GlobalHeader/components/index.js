@@ -8,14 +8,23 @@ import ExpandableMenu from './ExpandableMenu';
 import { loginLabels } from '../../common/constant';
 
 import { useStore } from '../context';
-const { ENTER_PASSWORD, PASSWORD_RULE, REMEMBER } = loginLabels;
+const { ENTER_PASSWORD, REMEMBER } = loginLabels;
 
 const GlobalHeader = () => {
     const store = useStore();
-    const { isLogin, isLoading, userLogin, isLoginSuccess, loginErrorMsg, setLoginErrorMsg } = store;
+    const {
+        isLogin,
+        isLoading,
+        userLogin,
+        useSignup,
+        isLoginSuccess,
+        loginErrorMsg,
+        setLoginErrorMsg,
+        isLoginModalVisible,
+        setModalVisible
+    } = store;
 
     const [visible, setVisible] = useState(false);
-    const [loginModalVisible, setLoginModalVisible] = useState(false);
     const [modalTitle, setModalTitle] = useState(null);
     const [loginForm] = Form.useForm();
 
@@ -284,7 +293,12 @@ const GlobalHeader = () => {
         } else if (getCookie('htp_usr') && getCookie('htp_pwd')) {
             setUsrAndPwd(null, null, -1);
         }
-        userLogin(userInfo);
+
+        if (modalTitle === '登录') {
+            userLogin(userInfo);
+        } else {
+            useSignup(userInfo);
+        }
     };
 
     useEffect(() => {
@@ -307,12 +321,12 @@ const GlobalHeader = () => {
 
     const onLoginClick = () => {
         setModalTitle('登录');
-        setLoginModalVisible(true);
+        setModalVisible(true);
     };
 
     const onSignupClick = () => {
         setModalTitle('注册');
-        setLoginModalVisible(true);
+        setModalVisible(true);
     };
 
     return (
@@ -374,7 +388,7 @@ const GlobalHeader = () => {
 
             <Modal
                 title={modalTitle}
-                open={loginModalVisible}
+                open={isLoginModalVisible}
                 footer={null}
                 onCancel={() => setLoginModalVisible(false)}
             >
