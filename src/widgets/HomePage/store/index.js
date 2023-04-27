@@ -187,7 +187,7 @@ class Store {
         { imgSrc: 'images/transportation/EMS海外购.jpg', href: 'http://buy.ems.com.cn/' }
     ];
 
-    carouselItems = [
+    carouselItems1 = [
         {
             prodList: [
                 {
@@ -337,6 +337,159 @@ class Store {
                 }
             ],
             store: 'SEPHORA'
+        }
+    ];
+
+    carouselItems2 = [
+        {
+            prodList: [
+                {
+                    desc: 1,
+                    imgSrc: 'https://image.s5a.com/is/image/saks/0400018494645_SPRINGBOUQUETFLORAL?wid=968&hei=1292&qlt=90&resMode=sharp2&op_usm=0.9,1.0,8,0',
+                    key: 'prod26',
+                    link: 'https://slooks.top/6wQS/65',
+                    originalPrice: '$298',
+                    currentPrice: '$298',
+                    title: 'D Ô E N Hathaway Floral-Printed Midi-Dress'
+                },
+                {
+                    desc: 2,
+                    imgSrc: 'https://image.s5a.com/is/image/saks/0400018517214_CREAM?wid=968&hei=1292&qlt=90&resMode=sharp2&op_usm=0.9,1.0,8,0',
+                    key: 'prod27',
+                    link: 'https://slooks.top/6wQV/65',
+                    originalPrice: '$1,980',
+                    currentPrice: '$1,980',
+                    title: 'Khaite Bruna Draped Off-The-Shoulder Dress'
+                },
+                {
+                    desc: 3,
+                    imgSrc: 'https://image.s5a.com/is/image/saks/0400018923415_NOCOLOR?wid=968&hei=1292&qlt=90&resMode=sharp2&op_usm=0.9,1.0,8,0',
+                    key: 'prod28',
+                    link: 'https://slooks.top/6wQR/65',
+                    originalPrice: '$460',
+                    currentPrice: '$460',
+                    title: 'Bond No.9 New York New York Flowers'
+                },
+                {
+                    desc: 4,
+                    imgSrc: 'https://image.s5a.com/is/image/saks/0400018517289_NATURAL?wid=968&hei=1292&qlt=90&resMode=sharp2&op_usm=0.9,1.0,8,0',
+                    key: 'prod29',
+                    link: 'https://slooks.top/6wQU/65',
+                    originalPrice: '$980',
+                    currentPrice: '$980',
+                    title: 'Khaite Sicily Sleeveless Floral Midi-Dress'
+                },
+                {
+                    desc: 5,
+                    imgSrc: 'https://image.s5a.com/is/image/saks/0400018517439_BLACK?wid=968&hei=1292&qlt=90&resMode=sharp2&op_usm=0.9,1.0,8,0',
+                    key: 'prod30',
+                    link: 'https://slooks.top/6wQT/65',
+                    originalPrice: '$980',
+                    currentPrice: '$980',
+                    title: 'Khaite Sicily Pleated Silk Midi-Dress'
+                }
+            ],
+            store: 'Saks Fifth Avenue'
+        },
+        {
+            prodList: [
+                {
+                    desc: 1,
+                    imgSrc: 'https://static.thgcdn.cn/images/large/webp/productimg/1600/1600/11324284-4711006554928086.jpg',
+                    key: 'prod36',
+                    link: 'https://www.lookfantastic.cn/maybelline-fit-me-matte-and-poreless-foundation-30ml-various-shades/11324284.html',
+                    originalPrice: '￥66.72',
+                    currentPrice: '¥50.04',
+                    title: '美宝莲 Fit Me 粉底液 30ml'
+                },
+                {
+                    desc: 2,
+                    imgSrc: 'https://static.thgcdn.cn/images/large/webp//productimg/1600/1600/11863661-1454927815465798.jpg',
+                    key: 'prod37',
+                    link: 'https://www.lookfantastic.cn/kora-organics-noni-glow-face-oil-10ml/11863661.html',
+                    originalPrice: '￥192.05',
+                    currentPrice: '¥144.03',
+                    title: 'Kora Organics Noni Glow Face Oil 10ml'
+                },
+                {
+                    desc: 3,
+                    imgSrc: 'https://static.thgcdn.cn/images/large/webp//productimg/1600/1600/12635437-1314911951568611.jpg',
+                    key: 'prod38',
+                    link: 'https://www.lookfantastic.cn/christophe-robin-cleansing-purifying-scrub-with-sea-salt-250ml/12635437.html',
+                    originalPrice: '￥350.70',
+                    currentPrice: '¥263.02',
+                    title: 'Christophe Robin 海盐头皮洗发磨砂膏'
+                },
+                {
+                    desc: 4,
+                    imgSrc: 'https://static.thgcdn.cn/images/large/webp//productimg/1600/1600/11234137-1494896385147875.jpg',
+                    key: 'prod39',
+                    link: 'https://www.lookfantastic.cn/chantecaille-just-skin-tinted-moisturizer-spf-15-50g-various-shades/11234137.html',
+                    originalPrice: '￥609.55',
+                    currentPrice: '¥457.16',
+                    title: '香缇卡隔离 | 有色面霜SPF15 - 50g'
+                },
+                {
+                    desc: 5,
+                    imgSrc: 'https://static.thgcdn.cn/images/large/webp//productimg/1600/1600/11234111-3134931961042939.jpg',
+                    key: 'prod40',
+                    link: 'https://www.lookfantastic.cn/chantecaille-future-skin-oil-free-foundation-30g-various-shades/11234111.html',
+                    originalPrice: '￥601.20',
+                    currentPrice: '¥450.90',
+                    title: '香缇卡粉霜 | 无油粉底 30G'
+                }
+            ],
+            store: 'Lookfantastic'
+        },
+        {
+            prodList: [
+                {
+                    desc: 1,
+                    imgSrc: 'https://cdn-images.farfetch-contents.com/17/54/74/04/17547404_38805680_1000.jpg',
+                    key: 'prod56',
+                    link: 'https://www.farfetch.com/shopping/women/jacquemus-le-bob-logo-bucket-hat-item-17547404.aspx?storeid=13537',
+                    originalPrice: '$125',
+                    currentPrice: '$125',
+                    title: 'Jacquemus Le Bob logo bucket hat'
+                },
+                {
+                    desc: 1,
+                    imgSrc: 'https://cdn-images.farfetch-contents.com/18/21/05/38/18210538_38770110_1000.jpg',
+                    key: 'prod57',
+                    link: 'https://www.farfetch.com/shopping/women/miu-miu-patent-leather-penny-loafers-item-18210538.aspx?storeid=11251',
+                    originalPrice: '$1,150',
+                    currentPrice: '$1,150',
+                    title: 'Miu Miu patent leather penny loafers'
+                },
+                {
+                    desc: 1,
+                    imgSrc: 'https://cdn-images.farfetch-contents.com/17/69/44/27/17694427_38639854_1000.jpg',
+                    key: 'prod58',
+                    link: 'https://www.farfetch.com/shopping/women/saint-laurent-opyum-110mm-slingback-pumps-item-17694427.aspx?storeid=13824',
+                    originalPrice: '$1,290',
+                    currentPrice: '$1,290',
+                    title: 'Saint Laurent Opyum 110mm slingback pumps'
+                },
+                {
+                    desc: 1,
+                    imgSrc: 'https://cdn-images.farfetch-contents.com/18/08/45/89/18084589_38547441_1000.jpg',
+                    key: 'prod59',
+                    link: 'https://www.farfetch.com/shopping/women/jacquemus-neve-logo-plaque-cropped-cardigan-item-18084589.aspx?storeid=13161',
+                    originalPrice: '$300',
+                    currentPrice: '$300',
+                    title: 'Jacquemus Neve logo plaque cropped cardigan'
+                },
+                {
+                    desc: 1,
+                    imgSrc: 'https://cdn-images.farfetch-contents.com/17/55/40/69/17554069_38067255_1000.jpg',
+                    key: 'prod60',
+                    link: 'https://www.farfetch.com/shopping/women/longchamp-le-pliage-filet-tote-bag-item-17554069.aspx?storeid=14434',
+                    originalPrice: '$110',
+                    currentPrice: '$110',
+                    title: 'Longchamp Le Pliage Filet tote bag'
+                }
+            ],
+            store: 'Farfetch'
         }
     ];
 

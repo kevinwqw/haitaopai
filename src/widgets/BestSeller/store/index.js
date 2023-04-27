@@ -21,8 +21,8 @@ class Store {
         {
             key: '3',
             name: `MAC COSMETICS Studio Fix Powder Plus Foundation`,
-            imgSrc: `https://slooks.top/6wct/65`,
-            link: `https://n.nordstrommedia.com/id/sr3/7cba6e2f-b498-430d-8c90-745dbdeeee5f.jpeg?crop=pad&pad_color=FFF&format=jpeg&w=780&h=1196&dpr=2`,
+            imgSrc: `https://n.nordstrommedia.com/id/sr3/7cba6e2f-b498-430d-8c90-745dbdeeee5f.jpeg?crop=pad&pad_color=FFF&format=jpeg&w=780&h=1196&dpr=2`,
+            link: `https://slooks.top/6wct/65`,
             originalPrice: `$39.00`,
             currentPrice: `$29.00`
         },
@@ -69,7 +69,7 @@ class Store {
         {
             key: '9',
             name: `Murad 慕勒/慕拉 视黄醇青春复活修护精华液 30ml`,
-            imgSrc: ``,
+            imgSrc: `https://source-feelunique.azoyacdn.com/media/catalog/product/m/u/murad_resurgence_retinol_youth_renewal_serum_30ml_1582797841_75.jpg?imageMogr2/thumbnail/438x438/extent/438x438/background/d2hpdGU=`,
             link: `https://cn.feelunique.com/product/1362019.html`,
             originalPrice: `£86.00`,
             currentPrice: ``

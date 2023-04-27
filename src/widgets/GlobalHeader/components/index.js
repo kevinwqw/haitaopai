@@ -352,7 +352,10 @@ const GlobalHeader = () => {
                                     }
                                 }}
                             >
-                                <UserOutlined />
+                                <div className="header-account">
+                                    <span>我的账户</span>
+                                    <UserOutlined />
+                                </div>
                             </Dropdown>
                         </div>
                     ) : (

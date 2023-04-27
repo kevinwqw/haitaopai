@@ -9,7 +9,7 @@ import { useStore } from '../context';
 
 const HomePage = () => {
     const store = useStore();
-    const { bestSellerlist, hotStoresList, transList, carouselItems } = store;
+    const { bestSellerlist, hotStoresList, transList, carouselItems1, carouselItems2 } = store;
 
     const promotePics = [
         { src: '/images/posters/1.jpg', link: `https://www.ssense.com/` },
@@ -95,7 +95,8 @@ const HomePage = () => {
                     </section>
                 </div>
                 <div className="home-rank-list">
-                    <MyCarousel items={carouselItems} />
+                    <MyCarousel items={carouselItems1} />
+                    <MyCarousel items={carouselItems2} />
                 </div>
             </div>
         </div>
