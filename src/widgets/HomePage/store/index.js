@@ -273,7 +273,8 @@ class Store {
         { imgSrc: `81`, link: `https://www.sephora.com` },
         { imgSrc: `82`, link: `https://www.sephora.com/ca/en/` },
         { imgSrc: `89`, link: `https://www.ssense.com` },
-        { imgSrc: `91`, link: `https://www.target.com` }
+        { imgSrc: `91`, link: `https://www.target.com` },
+        { imgSrc: `94`, link: `https://usa.tommy.com/en` }
     ];
 
     transList = [
