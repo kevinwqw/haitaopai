@@ -1,7 +1,3 @@
-const dayjs = require('dayjs');
-const has = require('lodash/has');
-const { isDevelopment } = require('../../common/env-util');
-
 let _globalHeaders = null;
 const getGlobalHeaders = () => {
     if (_globalHeaders) {
@@ -23,21 +19,6 @@ const pageHeaders = [
     { key: 'X-Frame-Options', value: 'SAMEORIGIN' }
 ];
 
-const assetCacheControlHeaderMap = {};
-const getAssetCacheControlHeader = (request) => {
-    const { path } = request;
-    if (has(assetCacheControlHeaderMap, path)) {
-        return assetCacheControlHeaderMap[path];
-    }
-
-    let value = null;
-    if (request.isAsset) {
-        value = 'max-age=36000, must-revalidate, public';
-    }
-    assetCacheControlHeaderMap[path] = 'max-age=36000, must-revalidate, public';
-    return value;
-};
-
 const setHeaders = (response, headers) => {
     if (response.isBoom) {
         headers.forEach((item) => {
@@ -58,14 +39,8 @@ const register = function (server) {
             return h.continue;
         }
 
-        if (request.isAsset) {
-            const cacheControl = getAssetCacheControlHeader(request);
-            if (cacheControl) {
-                response.header('Cache-Control', cacheControl);
-            }
-        } else {
-            setHeaders(response, pageHeaders);
-        }
+        setHeaders(response, pageHeaders);
+
         return h.continue;
     });
 };
