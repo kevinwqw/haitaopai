@@ -1,6 +1,6 @@
 {
     "name": "haitaopai",
-    "version": "1.1.4",
+    "version": "1.1.6",
     "description": "Hai Tao Pai",
     "repository": "https://github.com/KevinWangzzz/haitaopai",
     "main": "lib/index.js",
@@ -17,7 +17,7 @@
         "dev": "npm run build && node ./src/server/dev.js",
         "dev.js": "node ./src/server/dev.js",
         "start": "npm run build && node ./src/server/server.js",
-        "deploy:haitaopai": "node --max_old_space_size=8192M ./src/server/server.js",
+        "deploy:haitaopai": "node --max_old_space_size=4096 ./src/server/server.js",
         "build-ui": "npm run build && npm run copy-public"
     },
     "author": "",
