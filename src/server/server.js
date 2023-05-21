@@ -142,8 +142,6 @@ const tryStartServer = async function (server) {
         server.log(['error'], err);
     }
 
-    console.log(server.plugins.blipp.text());
-
     server.log(`Server listening at: ${server.info.uri}`);
 };
 
