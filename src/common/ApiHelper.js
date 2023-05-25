@@ -3,7 +3,7 @@ const get = require('lodash/get');
 const ContextManager = require('./ContextManager');
 
 const ERROR_LEVEL = 400;
-const INGORED_ERRORS = [404];
+const IGNORED_ERRORS = [404];
 
 const getHeaders = (contextId) => {
     const headers = {};
@@ -39,7 +39,7 @@ const errorHandler = (error) => {
         }
     };
 
-    if (status < ERROR_LEVEL || INGORED_ERRORS.includes(status)) {
+    if (status < ERROR_LEVEL || IGNORED_ERRORS.includes(status)) {
         return errorResult;
     }
 

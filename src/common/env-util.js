@@ -24,28 +24,9 @@ const readIntegerEnvValue = (key, defaultValue) => {
     throw new Error(`Environment variable ${key} is not an integer`);
 };
 
-const readNumberEnvValue = (key, defaultValue) => {
-    let value = readEnvValue(key, defaultValue);
-    if (value) {
-        value = parseFloat(value);
-        if (!Number.isNaN(value)) {
-            return value;
-        }
-    }
-    throw new Error(`Environment variable ${key} is not a number`);
-};
-
 const readBoolEnvValue = (key, defaultValue) => {
     const value = readEnvValue(key, defaultValue);
     return !!(value === 'true' || value === true);
-};
-
-const readJsonEnvValue = (key, defaultValue) => {
-    const value = readEnvValue(key, defaultValue);
-    if (value) {
-        return JSON.parse(value);
-    }
-    return null;
 };
 
 const isDevelopment = () => {
@@ -57,8 +38,6 @@ const isDevelopment = () => {
 module.exports = {
     readEnvValue,
     readIntegerEnvValue,
-    readNumberEnvValue,
     readBoolEnvValue,
-    readJsonEnvValue,
     isDevelopment
 };
